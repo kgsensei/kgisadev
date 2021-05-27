@@ -1,0 +1,29 @@
+<pre><code id="responseContent"></code></pre>
+<script type="text/javascript">
+     function getURLParameter(name){return decodeURIComponent((new RegExp('[?|&]'+name+'='+'([^&;]+?)(&|#|;|$)').exec(location.search)||[null,''])[1].replace(/\+/g,'%20'))||null;}
+     const currentURL=window.location.href;
+     const currentHost=window.location.host;
+     const currentHostname=window.location.hostname;
+     const currentPort=window.location.port;
+     const currentProtocol=window.location.protocol;
+     const currentPathname=window.location.pathname;
+     const currentPath=getURLParameter('p');
+     apiResponse={path:currentPath,response:[]}
+     if(currentPath=="/"){apiResponse.response.push({response:"ok"})
+     }else if(currentPath=="/blooket"){apiResponse.response.push({response:"ok",blooket:"https://www.blooket.com"})
+     }else if(currentPath=="/hi"){apiResponse.response.push({response:"ok",return:"i7y4aoly8fwoliholi8y3iuywoliy4alt7"})
+     }else if(currentPath=="/hello"){apiResponse.response.push({response:"ok",return:"kkjshggkluhseolihfskjyghjksrbijcvk"})
+     }else if(currentPath=="/discord"){apiResponse.response.push({response:"ok",server:"dicord.gg/s3QhtYJ5qH"})
+     }else if(currentPath=="/online_if"){apiResponse.response.push({response:"ok",status:"Currently Online"})
+     }else if(currentPath=="/whoami"){apiResponse.response.push({response:"ok",youare:getURLParameter('name')})
+     }else if(currentPath=="/kgsensei"){apiResponse.response.push({response:"ok",status:"bored",forcast:"lazy",iq:69420})
+     }else if(currentPath=="/auth"){if(getURLParameter('token')=="kgsenseiisawsome"){apiResponse.response.push({response:"ok",auth:"passed"})}else{apiResponse.response.push({response:"ok",auth:"failed"})}
+     }else if(currentPath=="/kgsensei"){apiResponse.response.push({response:"ok",message:getURLParameter('msg')})}
+     else{
+          apiResponse.response.push({
+               response:"API 404",
+          })
+     }
+     apiResponse=JSON.stringify(apiResponse,null,2);
+     document.getElementById("responseContent").innerHTML=apiResponse
+</script>
