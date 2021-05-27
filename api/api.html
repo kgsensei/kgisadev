@@ -18,7 +18,10 @@
      }else if(currentPath=="/whoami"){apiResponse.response.push({response:"ok",youare:getURLParameter('name')})
      }else if(currentPath=="/kgsensei"){apiResponse.response.push({response:"ok",status:"bored",forcast:"lazy",iq:69420})
      }else if(currentPath=="/auth"){if(getURLParameter('token')=="kgsenseiisawsome"){apiResponse.response.push({response:"ok",auth:"passed"})}else{apiResponse.response.push({response:"ok",auth:"failed"})}
-     }else if(currentPath=="/msg"){apiResponse.response.push({response:"ok",message:getURLParameter('msg')})}
+     }else if(currentPath=="/msg"){apiResponse.response.push({response:"ok",message:getURLParameter('msg')})
+     }else if(currentPath=="/index"){apiResponse.response.push({response:"ok",return:"/index.html"})
+     }else if(currentPath=="/card1"){apiResponse.response.push({response:"ok",title:"Blooket Hack",link1text:"GitHub Link",link2text:"Readme File",like3text:"Blooket Link"})
+     }
      else{
           apiResponse.response.push({
                response:"API 404",
