@@ -10,7 +10,7 @@ function updateOfflineStatus() {
 }
 
 function RunMarioScripts() {
-    if(online == true && ClientServerC == true) {
+    /*if(online == true && ClientServerC == true) {
         if(ver_current != Current_Client_Running_Ver) {
             if(Current_Client_Running_Ver.indexOf("[DEV]") > -1) {
                 console.log("_/_/_/    _/_/_/_/    _/     _/")
@@ -27,7 +27,7 @@ function RunMarioScripts() {
         }
     }else{
         MessageDisplay("ERROR:", "You are not online or have turned off Client/Server Communication off so some things might not work...")
-    }
+    }*/
 }
 
 window.addEventListener('online',  updateOnlineStatus);

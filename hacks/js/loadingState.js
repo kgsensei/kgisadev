@@ -70,44 +70,40 @@ Mario.LoadingState.prototype.Enter = function() {
     }
     
     Enjine.Resources.AddImages(this.Images);
-    
-    var testAudio = new Audio();
-	
-    if (testAudio.canPlayType("audio/mp3")) {
-    	Enjine.Resources.AddSound("1up", "sounds/1-up.mp3", 1)
-		    .AddSound("breakblock", "sounds/breakblock.mp3")
-		    .AddSound("bump", "sounds/bump.mp3", 4)
-		    .AddSound("cannon", "sounds/cannon.mp3")
-		    .AddSound("coin", "sounds/coin.mp3", 5)
-		    .AddSound("death", "sounds/death.mp3", 1)
-		    .AddSound("exit", "sounds/exit.mp3", 1)
-		    .AddSound("fireball", "sounds/fireball.mp3", 1)
-		    .AddSound("jump", "sounds/jump.mp3")
-		    .AddSound("kick", "sounds/kick.mp3")
-		    .AddSound("pipe", "sounds/pipe.mp3", 1)
-		    .AddSound("powerdown", "sounds/powerdown.mp3", 1)
-		    .AddSound("powerup", "sounds/powerup.mp3", 1)
-		    .AddSound("sprout", "sounds/sprout.mp3", 1)
-		    .AddSound("stagestart", "sounds/stagestart.mp3", 1)
-		    .AddSound("stomp", "sounds/stomp.mp3", 2);
-    } else {
-	    Enjine.Resources.AddSound("1up", "sounds/1-up.wav", 1)
-		    .AddSound("breakblock", "sounds/breakblock.wav")
-		    .AddSound("bump", "sounds/bump.wav", 2)
-		    .AddSound("cannon", "sounds/cannon.wav")
-		    .AddSound("coin", "sounds/coin.wav", 5)
-		    .AddSound("death", "sounds/death.wav", 1)
-		    .AddSound("exit", "sounds/exit.wav", 1)
-		    .AddSound("fireball", "sounds/fireball.wav", 1)
-		    .AddSound("jump", "sounds/jump.wav", 1)
-		    .AddSound("kick", "sounds/kick.wav", 1)
-		    .AddSound("message", "sounds/message.wav", 1)
-		    .AddSound("pipe", "sounds/pipe.wav", 1)
-		    .AddSound("powerdown", "sounds/powerdown.wav", 1)
-		    .AddSound("powerup", "sounds/powerup.wav", 1)
-		    .AddSound("sprout", "sounds/sprout.wav", 1)
-		    .AddSound("stagestart", "sounds/stagestart.wav", 1)
-		    .AddSound("stomp", "sounds/stomp.wav", 1);
+	if(soundOG == true) {
+        Enjine.Resources.AddSound("1up", "sounds/Sound1/1-up.mp3", 1)
+            .AddSound("breakblock", "sounds/Sound1/breakblock.mp3")
+            .AddSound("bump", "sounds/Sound1/bump.mp3", 4)
+            .AddSound("cannon", "sounds/Sound1/cannon.mp3")
+            .AddSound("coin", "sounds/Sound1/coin.mp3", 5)
+            .AddSound("death", "sounds/Sound1/death.mp3", 1)
+            .AddSound("exit", "sounds/Sound1/exit.mp3", 1)
+            .AddSound("fireball", "sounds/Sound1/fireball.mp3", 1)
+            .AddSound("jump", "sounds/Sound1/jump.mp3")
+            .AddSound("kick", "sounds/Sound1/kick.mp3")
+            .AddSound("pipe", "sounds/Sound1/pipe.mp3", 1)
+            .AddSound("powerdown", "sounds/Sound1/powerdown.mp3", 1)
+            .AddSound("powerup", "sounds/Sound1/powerup.mp3", 1)
+            .AddSound("sprout", "sounds/Sound1/sprout.mp3", 1)
+            .AddSound("stagestart", "sounds/Sound1/stagestart.mp3", 1)
+            .AddSound("stomp", "sounds/Sound1/stomp.mp3", 2);
+    }else{
+        Enjine.Resources.AddSound("1up", "sounds/Sound2/1-up.mp3", 1)
+            .AddSound("breakblock", "sounds/Sound2/breakblock.mp3")
+            .AddSound("bump", "sounds/Sound2/bump.mp3", 4)
+            .AddSound("cannon", "sounds/Sound2/cannon.mp3")
+            .AddSound("coin", "sounds/Sound2/coin.mp3", 5)
+            .AddSound("death", "sounds/Sound2/death.mp3", 1)
+            .AddSound("exit", "sounds/Sound2/exit.mp3", 1)
+            .AddSound("fireball", "sounds/Sound2/fireball.mp3", 1)
+            .AddSound("jump", "sounds/Sound2/jump.mp3")
+            .AddSound("kick", "sounds/Sound2/kick.mp3")
+            .AddSound("pipe", "sounds/Sound2/pipe.mp3", 1)
+            .AddSound("powerdown", "sounds/Sound2/powerdown.mp3", 1)
+            .AddSound("powerup", "sounds/Sound2/powerup.mp3", 1)
+            .AddSound("sprout", "sounds/Sound2/sprout.mp3", 1)
+            .AddSound("stagestart", "sounds/Sound2/stagestart.mp3", 1)
+            .AddSound("stomp", "sounds/Sound2/stomp.mp3", 2);
     }
     
     //load the array of tile behaviors

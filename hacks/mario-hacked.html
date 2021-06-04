@@ -40,8 +40,6 @@
         <div id="cover"></div>
         <h4 style="position: fixed; top: 1%; left: 90%; color: white;">-v <div id="ver_ctrl_open"></div></h4>
         <script>
-            const ver_current = "1"
-            const ver_mustUpdate = ["1"]
             var getUrlParameter = function getUrlParameter(sParam) {
                 var sPageURL = window.location.search.substring(1),
                     sURLVariables = sPageURL.split('&'),
@@ -57,13 +55,9 @@
                 }
             };
             const RTXtest = getUrlParameter('OutlinedMd')
-            if(RTXtest == "true") {
-                RTXof = true
-                OutlineMDMode = false
-            }else{
-                RTXof = false
-                OutlineMDMode = true
-            }
+            if(RTXtest == "true") {RTXof = true;OutlineMDMode = true}else{RTXof = false;OutlineMDMode = false}
+            const soundtest = getUrlParameter('SoundOg')
+            if(soundtest == "false") {soundOG = false;soundOGmode = false}else{soundOG = true;soundOGmode = true}
             NotGame = false
             if( navigator.userAgent.match(/Android/i)
                 || navigator.userAgent.match(/webOS/i)
@@ -76,7 +70,7 @@
                 }
             document.onreadystatechange = function () {
                 var state = document.readyState
-                if(state == 'complete') {;$("#cover").fadeOut();RunMarioScripts();document.getElementById("ver_ctrl_open").innerHTML = Current_Client_Running_Ver;new Enjine.Application().Initialize(new Mario.LoadingState(), 320, 240)}
+                if(state == 'complete') {;$("#cover").fadeOut();RunMarioScripts();document.getElementById("ver_ctrl_open").innerHTML = Current_Client_Running_Ver;Mario.PlayTitleMusic();new Enjine.Application().Initialize(new Mario.LoadingState(), 320, 240)}
             }
         </script>
         <div>
@@ -85,57 +79,56 @@
             <canvas id="canvas" width="740" height="580">
                 <p>Your browser does not support the required elements.</p>
             </canvas>
-            <script src="Enjine/core.js"></script>
-            <script src="Enjine/gameCanvas.js"></script>
-            <script src="Enjine/keyboardInput.js"></script>
-            <script src="Enjine/resources.js"></script>
-            <script src="Enjine/drawable.js"></script>
+            <script src="js/core.js"></script>
+            <script src="js/gameCanvas.js"></script>
+            <script src="js/keyboardInput.js"></script>
+            <script src="js/resources.js"></script>
+            <script src="js/drawable.js"></script>
             <script src="js/state.js"></script>
             <script src="js/gameTimer.js"></script>
-            <script src="Enjine/camera.js"></script>
-            <script src="Enjine/drawableManager.js"></script>
-            <script src="Enjine/sprite.js"></script>
-            <script src="Enjine/spriteFont.js"></script>
-            <script src="Enjine/frameSprite.js"></script>
-            <script src="Enjine/animatedSprite.js"></script>
-            <script src="Enjine/collideable.js"></script>
+            <script src="js/camera.js"></script>
+            <script src="js/drawableManager.js"></script>
+            <script src="js/sprite.js"></script>
+            <script src="js/spriteFont.js"></script>
+            <script src="js/frameSprite.js"></script>
+            <script src="js/animatedSprite.js"></script>
+            <script src="js/collideable.js"></script>
             <script src="js/application.js"></script>
-            <script src="code/setup.js"></script>
-            <script src="code/spriteCuts.js"></script>
-            <script src="code/level.js"></script>
-            <script src="code/backgroundGenerator.js"></script>
-            <script src="code/backgroundRenderer.js"></script>
-            <script src="code/improvedNoise.js"></script>
-            <script src="code/notchSprite.js"></script>
-            <script src="code/character.js"></script>
-            <script src="code/levelRenderer.js"></script>
-            <script src="code/levelGenerator.js"></script>
-            <script src="code/spriteTemplate.js"></script>
-            <script src="code/enemy.js"></script>
-            <script src="code/fireball.js"></script>
-            <script src="code/sparkle.js"></script>
-            <script src="code/coinAnim.js"></script>
-            <script src="code/mushroom.js"></script>
-            <script src="code/particle.js"></script>
-            <script src="code/fireFlower.js"></script>
-            <script src="code/bulletBill.js"></script>
-            <script src="code/flowerEnemy.js"></script>
-            <script src="code/shell.js"></script>
+            <script src="js/setup.js"></script>
+            <script src="js/spriteCuts.js"></script>
+            <script src="js/level.js"></script>
+            <script src="js/backgroundGenerator.js"></script>
+            <script src="js/backgroundRenderer.js"></script>
+            <script src="js/improvedNoise.js"></script>
+            <script src="js/notchSprite.js"></script>
+            <script src="js/character.js"></script>
+            <script src="js/levelRenderer.js"></script>
+            <script src="js/levelGenerator.js"></script>
+            <script src="js/spriteTemplate.js"></script>
+            <script src="js/enemy.js"></script>
+            <script src="js/fireball.js"></script>
+            <script src="js/sparkle.js"></script>
+            <script src="js/coinAnim.js"></script>
+            <script src="js/mushroom.js"></script>
+            <script src="js/particle.js"></script>
+            <script src="js/fireFlower.js"></script>
+            <script src="js/bulletBill.js"></script>
+            <script src="js/flowerEnemy.js"></script>
+            <script src="js/shell.js"></script>
             <script src="js/titleState.js"></script>
             <script src="js/loadingState.js"></script>
-            <script src="code/loseState.js"></script>
-            <script src="code/winState.js"></script>
+            <script src="js/loseState.js"></script>
+            <script src="js/winState.js"></script>
             <script src="js/mapState.js"></script>
-            <script src="code/levelState.js"></script>
+            <script src="js/levelState.js"></script>
             <script src="sounds/music.js"></script>
             <script src="js/app_h.js"></script>
             <script src="js/LoadedServerResourceManager.js"></script>
         </div>
         <button style="width: 15%; height: 50px; color: white; background-color: rgb(40, 40, 40); border-radius: 2.5px; position: absolute; left: 55%; top: 7.5%; font-size: larger; font-family: 'Courier New', Courier, monospace;" onclick="javascript:window.location.href='#Settings'">Settings</button>
         <button style="width: 15%; height: 50px; color: white; background-color: rgb(40, 40, 40); border-radius: 2.5px; position: absolute; left: 55%; top: 15%; font-size: larger; font-family: 'Courier New', Courier, monospace;" onclick="AddHacksOverLay()">Hacks Menu</button>
-        <div id="musicContent">
-            <audio autoplay loop><source src="sounds/titleScreen.mp3" type="audio/mpeg"></audio>
-        </div>
+        <button style="width: 15%; height: 50px; color: white; background-color: rgb(40, 40, 40); border-radius: 2.5px; position: absolute; left: 55%; top: 22.5%; font-size: larger; font-family: 'Courier New', Courier, monospace;" onclick="javascript:window.location.href='#Credits'">Credits</button>
+        <div id="musicContent"></div>
         <div id="Settings" class="overlay">
             <div class="popup">
                 <h2>Settings:</h2>
@@ -154,6 +147,7 @@
                         </label>
                     </div>
                     <br><button style="width: 50%; height: 50px; color: white; background-color: rgb(40, 40, 40); border-radius: 2.5px; font-size: larger; font-family: 'Courier New', Courier, monospace;" onclick="OutlineMD()">Outlined Mode Toggle</button>
+                    <br><button style="width: 50%; height: 50px; color: white; background-color: rgb(40, 40, 40); border-radius: 2.5px; font-size: larger; font-family: 'Courier New', Courier, monospace;" onclick="SoundMD()">Sound Mix Toggle</button>
                     <br><br><input style="border-color: transparent; width: 15%; height: 50px; color: white; background-color: rgb(40, 40, 40); border-radius: 2.5px; font-size: larger; font-family: 'Courier New', Courier, monospace;" type="button" value="Apply" onclick="ApplySettings()">
                 </div>
             </div>
@@ -164,6 +158,18 @@
                 <a class="close" href="#">&times;</a>
                 <div class="content">
                     <div id="HacksMainContentOverlay"></div>
+                </div>
+            </div>
+        </div>
+        <div id="Credits" class="overlay">
+            <div class="popup">
+                <h2>HTML5 Mario Updated</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    <h4>Original Code: <a style="color: crimson;" href="https://github.com/robertkleffner/">Robert Kleffner</a><br>
+                    Modded Code: <a style="color: crimson;" href="https://github.com/BuRn-sensei-GGT/">sensei</a><br>
+                    Music v1: ????<br>
+                    Music v2: Exyl, Kevin MacLeod<br></h4>
                 </div>
             </div>
         </div>

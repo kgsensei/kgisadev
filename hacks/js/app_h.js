@@ -1,4 +1,4 @@
-var Current_Client_Running_Ver = "[DEV]"
+var Current_Client_Running_Ver = "3.0 [DEV]"
 var serverclic = true
 var allowafire = false
 
@@ -37,7 +37,24 @@ function MessageDisplay(msgdistitle, msgdismessage) {
     window.location.href = "#Message";
 }
 function OutlineMD() {
-    window.location.href='main.html?OutlinedMd=' + OutlineMDMode;
+    if(RTXof == false) {
+        OutlineMDMode = true
+    }if(RTXof == true) {
+        OutlineMDMode = false
+    }if(soundOG == true) {
+        soundOGmode = true
+    }
+    window.location.href='mario-hacked?OutlinedMd=' + OutlineMDMode + "&SoundOg=" + soundOGmode + "#Settings";
+}
+function SoundMD() {
+    if(RTXof == false) {
+        OutlineMDMode = false
+    }if(soundOG == true) {
+        soundOGmode = false
+    }if(soundOG == false) {
+        soundOGmode = true
+    }
+    window.location.href='mario-hacked?OutlinedMd=' + OutlineMDMode + "&SoundOg=" + soundOGmode + "#Settings";
 }
 function ApplySettings() {
     brightness = document.getElementById("briRange").value;
