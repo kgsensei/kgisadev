@@ -1,0 +1,1 @@
+console.log("Proudly built and published by kgsensei.\nCopyright (c) 2021 kgsensei.")
