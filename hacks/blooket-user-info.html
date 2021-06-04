@@ -42,18 +42,21 @@
           <script>
                function findStats() {
                     const username=document.getElementById("input1").value;
-                    f=fetch("https://api.blooket.com/api/users?name="+username,{
+                    fetch("https://api.blooket.com/api/users?name="+username,{
                          headers: {
-                              "Content-Type": "application/json"
+                              "Content-Type": "application/json",
+                              "Access-Control-Allow-Origin": "*", 
+                              "Access-Control-Allow-Credentials": true
                          },
                          "referrer": "https://www.blooket.com/",
                          "body": null,
                          "method": "GET",
                          "mode": "no-cors"
-                    });
-                    f.then((response)=>{
-                         console.log(response.body);
                     })
+                    .then(function(response){return response.json()})
+                    .then(function(json){
+                         console.log(json)
+                    });
                }
           </script>
           <h2>Blooket Information Finder:</h2>
