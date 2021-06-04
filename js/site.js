@@ -12,9 +12,11 @@
           console.dir(el);
           if (consoleIsOpen===false&&consoleOpened===true) {
                window.dispatchEvent(new Event('devtools-opened'));
+               alert("opened")
                consoleOpened=false;
           } else if (consoleIsOpen===true&&consoleOpened===false) {
                window.dispatchEvent(new Event('devtools-closed'));
+               alert("closed")
                consoleOpened=true;
           }
           consoleIsOpen=false;
