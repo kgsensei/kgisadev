@@ -41,19 +41,20 @@
      <body>
           <script>
                function findStats() {
-                    const username=document.getElementById("input1").value;
+                    //const username=document.getElementById("input1").value;
+                    const username="kgsensei";
                     fetch("https://api.blooket.com/api/users?name="+username,{
-                         headers: {
-                              "Content-Type": "application/json",
-                              "Access-Control-Allow-Origin": "*", 
-                              "Access-Control-Allow-Credentials": true
+                         headers:{
+                              "Content-Type":"application/json"
                          },
-                         "referrer": "https://www.blooket.com/",
-                         "body": null,
-                         "method": "GET",
-                         "mode": "no-cors"
+                         "referrer":"https://api.blooket.com/api/users?name="+username,
+                         "body":null,
+                         "mode":"no-cors",
+                         "method":"GET"
                     })
-                    .then(function(response){return response.json()})
+                    .then(function(response){
+                         return(response.json())
+                    })
                     .then(function(json){
                          console.log(json)
                     });
