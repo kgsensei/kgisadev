@@ -10,10 +10,10 @@
           <script src="https://kgsensei.dev/js/site.js"></script>
           <style>
                body{
-                    padding:25px;
-                    margin:25px;
-               }h1,h2,h3,h4,h5,h6,p,div{
-                    color:white;
+                    padding: 25px;
+                    margin: 25px;
+               }h1,h2,h3,h4,h5,h6,p{
+                    color: white;
                }#input1{
                     background-color: rgb(50,50,50);
                     color: white;
@@ -34,6 +34,19 @@
                     border-width: 1px;
                     border-radius: 3.5px;
                     font-size: 24px;
+               }#BlooketStatsHolder{
+                    width: 23%;
+                    padding: 5px;
+                    border-spacing: 5px;
+                    margin: 5px;
+               }tr{
+                    padding: 5px;
+                    border-spacing: 5px;
+                    margin: 5px;
+                    border: 2.5px solid transparent;
+               }div{
+                    color: white;
+                    font-size: 20px;
                }
           </style>
           <link rel="stylesheet" href="https://kgsensei.dev/css/site.css">
@@ -41,28 +54,114 @@
      <body>
           <script>
                function findStats() {
-                    //const username=document.getElementById("input1").value;
-                    const username="kgsensei";
-                    fetch("https://api.blooket.com/api/users?name="+username,{
-                         headers:{
-                              "Content-Type":"application/json"
-                         },
-                         "referrer":"https://api.blooket.com/api/users?name="+username,
-                         "body":null,
-                         "mode":"no-cors",
-                         "method":"GET"
-                    })
-                    .then(function(response){
-                         return(response.json())
-                    })
-                    .then(function(json){
-                         console.log(json)
-                    });
+                    const username=document.getElementById("input1").value;
+                    if(username !== ""){
+                         try{
+                              fetch("https://quiet-cove-98832.herokuapp.com/https://api.blooket.com/api/users?name="+username,{
+                              headers:{
+                                   "Content-Type":"application/json",
+                                   "Access-Control-Allow-Origin":"https://www.blooket.com/"
+                              },
+                              "referrer":"https://api.blooket.com/api/users?name="+username,
+                              "body":null,
+                              "method":"GET"
+                              })
+                              .then(function(response){
+                                   return(response.json())
+                              })
+                              .then(function(json){
+                                   document.getElementById('totalTokens').innerHTML=json.totalTokens
+                                   document.getElementById('tokensAvailable').innerHTML=json.tokensAvailable
+                                   document.getElementById('gamesPlayed').innerHTML=json.gamesPlayed
+                                   document.getElementById('topFives').innerHTML=json.topFives
+                                   document.getElementById('racesWon').innerHTML=json.racesWon
+                                   document.getElementById('totalCash').innerHTML=json.totalCash
+                                   document.getElementById('totalCrypto').innerHTML=json.totalCrypto
+                                   document.getElementById('totalGold').innerHTML=json.totalGold
+                                   document.getElementById('totalPoints').innerHTML=json.totalPoints
+                                   document.getElementById('towerClears').innerHTML=json.towerClears
+                                   document.getElementById('numUnlocks').innerHTML=json.numUnlocks
+                                   document.getElementById('classicPoints').innerHTML=json.classicPoints
+                                   document.getElementById('defenseDmg').innerHTML=json.defenseDmg
+                                   document.getElementById('defenseRounds').innerHTML=json.defenseRounds
+                                   document.getElementById('plan').innerHTML=json.plan
+                                   document.getElementById('role').innerHTML=json.role
+                              });
+                         }catch(e){
+                              console.log("Error: "+e)
+                         }
+                    }
                }
           </script>
           <h2>Blooket Information Finder:</h2>
           <input type="text" placeholder="Blooket Username" id="input1">
           <input type="submit" value="Find Stats" id="submit1" onclick="findStats()">
+          <br><br><table id="BlooketStatsHolder">
+               <tr>
+                    <th><div>Total Tokens: </div></th>
+                    <th><div id="totalTokens">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Current Tokens: </div></th>
+                    <th><div id="tokensAvailable">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Games Played: </div></th>
+                    <th><div id="gamesPlayed">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Top Fives: </div></th>
+                    <th><div id="topFives">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Races Won: </div></th>
+                    <th><div id="racesWon">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Total Cash: </div></th>
+                    <th><div id="totalCash">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Total Crypto: </div></th>
+                    <th><div id="totalCrypto">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Total Gold: </div></th>
+                    <th><div id="totalGold">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Total Points: </div></th>
+                    <th><div id="totalPoints">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Tower Clears: </div></th>
+                    <th><div id="towerClears">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Blooks Unlocked: </div></th>
+                    <th><div id="numUnlocks">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Classic Points: </div></th>
+                    <th><div id="classicPoints">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Defense Damage: </div></th>
+                    <th><div id="defenseDmg">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Defense Rounds: </div></th>
+                    <th><div id="defenseRounds">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Plan Type: </div></th>
+                    <th><div id="plan">N|A</div></th>
+               </tr>
+               <tr>
+                    <th><div>Account Role: </div></th>
+                    <th><div id="role">N|A</div></th>
+               </tr>
+          </table>
           <br><br><br><h5>Copyright © 2021 kgsensei. <a href="./">Return to Home</a>.</h5>
      </body>
 </html>

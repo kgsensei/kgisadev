@@ -12,19 +12,12 @@ let info={
      questionID: vue.$store._vm._data.$$state.game.questions.currentId,
 }
 */
-const gamehash="60bbc967c9b522001d7f4ebd"
-fetch("https://quizizz.com/api/main/game/"+gamehash,{
-     headers:{
-          "Content-Type":"application/json"
-     },
-     "referrer":"https://quizizz.com/api/main/game/"+gamehash,
-     "body":null,
-     "mode":"no-cors",
-     "method":"GET"
-})
-.then(function(response){
-     return(response.json())
-})
-.then(function(json){
-     console.log(json.data.questions)
-});
+
+function findAnswers() {
+     //60bbc967c9b522001d7f4ebd
+     const gamehash=document.getElementById("input1").value;
+     fetch('https://quizizz.com/api/main/game/'+gamehash)
+          .then(response=>response.json())
+               .then(data=>gameData=data)
+               .then(()=>console.log(fetched))
+}
