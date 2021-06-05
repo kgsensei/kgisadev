@@ -20,6 +20,8 @@
      }else if(currentPath=="/msg"){apiResponse.response.push({response:"ok",message:getURLParameter('msg')})
      }else if(currentPath=="/index"){apiResponse.response.push({response:"ok",return:"/index.html"})
      }else if(currentPath=="/card1"){apiResponse.response.push({response:"ok",title:"Blooket Hack",link1text:"GitHub Link",link2text:"Readme File",like3text:"Blooket Link"})
+     }else if(currentPath=="/my_ip"){apiResponse.response.push({response:"ok",ip:currentHost})
+     }else if(currentPath=="/ip"){apiResponse.response.push({response:"ok",ip:currentHost})
      }
      else{
           apiResponse.response.push({
