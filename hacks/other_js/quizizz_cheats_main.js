@@ -16,8 +16,25 @@ let info={
 function findAnswers() {
      //60bbc967c9b522001d7f4ebd
      const gamehash=document.getElementById("input1").value;
+     fetch("https://quiet-cove-98832.herokuapp.com/https://quizizz.com/api/main/game/"+gamehash,{
+          headers:{
+               "Content-Type":"application/json",
+               "Access-Control-Allow-Origin":"https://quizizz.com/"
+          },
+          "referrer":"https://quizizz.com/api/main/game/"+gamehash,
+          "body":null,
+          "method":"GET"
+     })
+     .then(function(response){
+          return(response.json())
+     })
+     .then(function(json){
+          console.log(json.data)
+     });
+     /*
      fetch('https://quizizz.com/api/main/game/'+gamehash)
           .then(response=>response.json())
                .then(data=>gameData=data)
                .then(()=>console.log(fetched))
+     */
 }
