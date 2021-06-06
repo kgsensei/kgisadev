@@ -4,37 +4,11 @@ urls=[
      "https://quizizz.com/api/main/game/60bbb4ea0251bd001d74d356"
 ]
 */
-let vue=document.querySelector("body > div").__vue__;
-let info={
-     roomHash: vue.$store._vm._data.$$state.game.data.roomHash,
-     playerId: vue.$store._vm._data.$$state.game.player.playerId,
-     quizID: vue.$store._vm._data.$$state.game.data.quizId,
-     roomCode: vue.$store._vm._data.$$state.game.data.roomCode,
-     questionID: vue.$store._vm._data.$$state.game.questions.currentId,
-}
 
 function findAnswers() {
-     //60bbc967c9b522001d7f4ebd
      gamehash=document.getElementById("input1").value;
-     fetch("https://quizizz.com/api/main/game/"+gamehash,{
-          headers:{
-               "Access-Control-Allow-Origin":"https://quizizz.com/",
-               "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-               "accept-language":"en-US,en;q=0.9",
-               "cache-control":"max-age=0",
-               "Content-Type":"application/json",
-               "sec-ch-ua":"\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Microsoft Edge\";v=\"92\"",
-               "sec-ch-ua-mobile":"?0",
-               "sec-fetch-dest":"document",
-               "sec-fetch-mode":"navigate"
-          },
-          "referrer":"https://quizizz.com/api/main/game/"+gamehash,
-          "body":null,
-          "method":"GET"
-     })
-     .then(response=>response.json())
+     alert("Sorry buddy, this hack is still in development.\n\nIt will probably be finished around Monday (6/7/21) or Tuesday (6/8/21). Thanks for stoping by though.\n\n-kgsensei")
 }
-
 
 /* Copy Paste Working Code */
 let vue=document.querySelector("body > div").__vue__;
