@@ -1,3 +1,8 @@
+:root {
+     --contact_icon_height: 55%;
+     --contact_icon_size: 12%;
+}
+
 body{
      background-image: url("./backdrop.jpg");
      background-color: rgb(10,10,10);
@@ -53,6 +58,30 @@ body{
 }.cardLink3{
      position: absolute;
      top: 67.5%;
+}#iconGitHub{
+     position: absolute;
+     width: var(--contact_icon_size);
+     height: var(--contact_icon_size);
+     top: var(--contact_icon_height);
+     left: 20%;
+}#iconMainTo{
+     position: absolute;
+     width: var(--contact_icon_size);
+     height: var(--contact_icon_size);
+     top: var(--contact_icon_height);
+     left: 62.5%;
+}#iconDiscord{
+     position: absolute;
+     width: var(--contact_icon_size);
+     height: var(--contact_icon_size);
+     top: var(--contact_icon_height);
+     left: 47.75%;
+}#iconTwitter{
+     position: absolute;
+     width: var(--contact_icon_size);
+     height: var(--contact_icon_size);
+     top: var(--contact_icon_height);
+     left: 33.5%;
 }#mobile{
      display: none;
 }#pc{

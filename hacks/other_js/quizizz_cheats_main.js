@@ -46,6 +46,22 @@ async function getAnswers(){
                     currentQuestion=stripHTML(currentQuestion)
                     currentAnswer=stripHTML(currentAnswer)
                     console.log(("%cQ: "+currentQuestion+"%c - %cA: "+currentAnswer+"\n"),"color:white","color:cyan","color:green")
+               }else if(questions.type=="MSQ"){
+                    answerInt=questions.structure.answer
+                    currentQuestion=questions.structure.query.text
+                    questions.structure.options.forEach(options=>{
+                         if(answerInt==currentInt){
+                              currentAnswer=options.text
+                              currentInt=currentInt+1
+                         }else{
+                              currentInt=currentInt+1
+                         }
+                    })
+                    currentQuestion=stripHTML(currentQuestion)
+                    currentAnswer=stripHTML(currentAnswer)
+                    console.log(("%cQ: "+currentQuestion+"%c - %cA: "+currentAnswer+"\n"),"color:white","color:cyan","color:green")
+               }else if(questions.type=="OPEN"){
+                    console.log(("%cCannot Solve for Open Questions.\n"),"color:red")
                }else{
                     console.log(("%cUnsupported Question Type\n"),"color:red")
                }
