@@ -1,4 +1,4 @@
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 RewriteRule ^([^\.]+)$ $1.md [NC,L]
-RewriteRule /?\test.txt$ - [F,L]
+RewriteRule /?\test.txt$ [F,L]
