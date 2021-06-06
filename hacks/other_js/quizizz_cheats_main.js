@@ -57,13 +57,14 @@ async function getAnswers(){
           .then(()=>console.log(jsonData))
           console.clear()
           jsonData.data.questions.forEach(questions=>{
+               currentInt=0
                if(questions.type=="MCQ"){
                     answerInt=questions.structure.answer
                     currentQuestion=questions.structure.query.text
-                    currentInt=0
                     questions.structure.options.forEach(options=>{
                          if(answerInt==currentInt){
                               currentAnswer=options.text
+                              currentInt=currentInt+1
                          }else{
                               currentInt=currentInt+1
                          }
