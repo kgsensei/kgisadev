@@ -46,11 +46,16 @@ let info={
      roomCode:vue.$store._vm._data.$$state.game.data.roomCode,
      questionID:vue.$store._vm._data.$$state.game.questions.currentId,
 }
+function stripHTML(html) {
+     let doc=new DOMParser().parseFromString(html,'text/html');
+     return doc.body.textContent||"";
+}
 async function getAnswers(){
      const response=await fetch("https://quizizz.com/api/main/game/"+info.roomHash)
           .then(response=>response.json())
           .then(data=>jsonData=data)
           .then(()=>console.log(jsonData))
+          console.clear()
           jsonData.data.questions.forEach(questions=>{
                if(questions.type=="MCQ"){
                     answerInt=questions.structure.answer
@@ -58,11 +63,16 @@ async function getAnswers(){
                     currentInt=0
                     questions.structure.options.forEach(options=>{
                          if(answerInt==currentInt){
-                              console.log("Q: "+currentQuestion+"; A: "+options.text)
+                              currentAnswer=options.text
                          }else{
-                              answerInt=answerInt+1
+                              currentInt=currentInt+1
                          }
                     })
+                    currentQuestion=stripHTML(currentQuestion)
+                    currentAnswer=stripHTML(currentAnswer)
+                    console.log(("%cQ: "+currentQuestion+"%c - %cA: "+currentAnswer+"\n"),"color:white","color:cyan","color:green")
+               }else{
+                    console.log(("%cUnsupported Question Type\n"),"color:red")
                }
           })
 }
