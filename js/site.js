@@ -20,6 +20,6 @@ measurementId:\"G-EW2T6G5DLH\"\
 firebase.initializeApp(firebaseConfig);\
 firebase.analytics();"
 setTimeout(function(){document.body.appendChild(scriptAppendOne);},100);
-setTimeout(function(){document.body.appendChild(scriptAppendTwo);},300);
-setTimeout(function(){document.body.appendChild(scriptAppendThr);},400);
+setTimeout(function(){document.body.appendChild(scriptAppendTwo);},200);
+setTimeout(function(){document.body.appendChild(scriptAppendThr);},300);
 })
