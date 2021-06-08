@@ -4,12 +4,12 @@
      --card_height_pc: 18%;
      --animation_display: none;
 }body{
-     background: linear-gradient(196deg,#111111,#858585);
+     background: linear-gradient(196deg,#111111,#5f5f5f);
      background-size: 600% 600%;
-     -webkit-animation: greyBackground 30s ease infinite;
-     -moz-animation: greyBackground 30s ease infinite;
-     -o-animation: greyBackground 30s ease infinite;
-     animation: greyBackground 30s ease infinite;
+     -webkit-animation: greyBackground 25s ease infinite;
+     -moz-animation: greyBackground 25s ease infinite;
+     -o-animation: greyBackground 25s ease infinite;
+     animation: greyBackground 25s ease infinite;
 }@-webkit-keyframes greyBackground {
      0%{background-position:65% 0%}
      50%{background-position:36% 100%}
