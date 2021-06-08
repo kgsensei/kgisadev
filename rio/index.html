@@ -1,0 +1,144 @@
+<html lang="en">
+     <head>
+          <meta charset="utf-8">
+          <title>kgsensei's rioai</title>
+          <meta name="description" content="kgsensei's RioAI v1 Public Page">
+          <meta name="keywords" content="python,css,js,html5,jquery,php,github,selenium,kgsensei,hacks,hax,rioai,rio,voice,assistant">
+          <meta name="author" content="kgsensei">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="icon" href="https://kgsensei.dev/images/favicon.ico"/>
+          <link rel="stylesheet" href="https://kgsensei.dev/css/site.css">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://kgsensei.dev/js/site.js"></script>
+          <style>
+               body{
+                    background: linear-gradient(196deg,#216fff,#0099ff);
+                    background-size: 450% 450%;
+                    -webkit-animation: greyBackground 15s ease infinite;
+                    -moz-animation: greyBackground 15s ease infinite;
+                    -o-animation: greyBackground 15s ease infinite;
+                    animation: greyBackground 15s ease infinite;
+               }@-webkit-keyframes greyBackground {
+                    0%{background-position:65% 0%}
+                    50%{background-position:36% 100%}
+                    100%{background-position:65% 0%}
+               }@-moz-keyframes greyBackground {
+                    0%{background-position:65% 0%}
+                    50%{background-position:36% 100%}
+                    100%{background-position:65% 0%}
+               }@-o-keyframes greyBackground {
+                    0%{background-position:65% 0%}
+                    50%{background-position:36% 100%}
+                    100%{background-position:65% 0%}
+               }@keyframes greyBackground {
+                    0%{background-position:65% 0%}
+                    50%{background-position:36% 100%}
+                    100%{background-position:65% 0%}
+               }.no-browser-support{
+                    display: none;
+               }.app{
+                    display: block;
+               }#start-record-btn{
+                    position: fixed;
+                    left: 100px;
+                    top: 50px;
+                    display: block;
+               }#pause-record-btn{
+                    position: fixed;
+                    left: 100px;
+                    top: 50px;
+                    display: none;
+               }.voiceoption-icons{
+                    width: 100px;
+                    height: 100px;
+               }*{
+                    user-select: none;
+               }*::selection{
+                    background: none;
+               }*::-moz-selection{
+                    background: none;
+               }#stuff-user-said{
+                    position: fixed;
+                    top: 70px;
+                    left: 300px;
+                    font-size: 30px;
+                    font-family: 'Courier New',Courier,monospace;
+               }#stuff-comp-said{
+                    position: fixed;
+                    top: 110px;
+                    left: 425px;
+                    font-size: 30px;
+                    font-family: 'Courier New',Courier,monospace;
+               }#doesnt-support{
+                    font-size: 35px;
+                    font-family: 'Courier New',Courier,monospace;
+               }#copyright{
+                    position: fixed;
+                    top: 95%;
+                    left: 2%;
+               }@media screen and (max-width: 800px){
+                    #start-record-btn{
+                         position: fixed;
+                         left: 20px;
+                         top: 40px;
+                         display: block;
+                    }#pause-record-btn{
+                         position: fixed;
+                         left: 20px;
+                         top: 40px;
+                         display: none;
+                    }.voiceoption-icons{
+                         width: 100px;
+                         height: 100px;
+                    }*{
+                         user-select: none;
+                    }*::selection{
+                         background: none;
+                    }*::-moz-selection{
+                         background: none;
+                    }#stuff-user-said{
+                         position: fixed;
+                         top: 170px;
+                         left: 20px;
+                         font-size: 30px;
+                         font-family: 'Courier New',Courier,monospace;
+                    }#stuff-comp-said{
+                         position: fixed;
+                         top: 215px;
+                         left: 40px;
+                         font-size: 30px;
+                         font-family: 'Courier New',Courier,monospace;
+                    }#copyright{
+                         position: fixed;
+                         top: 96%;
+                         left: 2%;
+                    }
+               }
+          </style>
+     </head>
+     <body>
+          <div class="app">
+               <div id="start-record-btn">
+                    <img src="./start.ico" class="voiceoption-icons">
+               </div>
+               <div id="pause-record-btn">
+                    <img src="./stop.ico" class="voiceoption-icons">
+               </div>
+               <div id="stuff-user-said">
+                    <b><span id="yourText"></span></b>
+               </div>
+               <div id="stuff-comp-said">
+                    <b><span id="compText"></span></b>
+               </div>
+          </div>
+          <div class="no-browser-support">
+               <span id="doesnt-support">Sorry, your browser doesn't support this</span>
+          </div>
+          <div id="copyright">
+               Copyright © 2021 kgsensei.
+          </div>
+          <script src="./rio.js"></script>
+     </body>
+</html>
