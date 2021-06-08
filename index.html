@@ -5,7 +5,7 @@
           <meta name="description" content="kgsensei's personal website for basic use">
           <meta name="keywords" content="python,css,js,html5,jquery,php,github,selenium,kgsensei,hacks,hax,blooket,quizizz,cheat,cheats,summon">
           <meta name="author" content="kgsensei">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
           <link rel="icon" href="./images/favicon.ico"/>
           <link rel="stylesheet" href="https://kgsensei.dev/css/site.css">
           <link rel="stylesheet" href="./css/main.css">
@@ -17,48 +17,8 @@
      <body>
           <script type="text/javascript">
                keyPresses=[]
-               function checkCodeEntered(){
-                    if(keyPresses[0]=="U"){
-                         if(keyPresses[1]=="U"){
-                              if(keyPresses[2]=="D"){
-                                   if(keyPresses[3]=="D"){
-                                        if(keyPresses[4]=="L"){
-                                             if(keyPresses[5]=="R"){
-                                                  if(keyPresses[6]=="L"){
-                                                       if(keyPresses[7]=="R"){
-                                                            window.location.href="./ohno"
-                                                       }
-                                                  }
-                                             }
-                                        }
-                                   }
-                              }
-                         }
-                    }
-                    if(keyPresses.length==8){
-                         keyPresses.shift()
-                    }
-               }
-               document.onkeydown=function(event){
-                    switch(event.keyCode){
-                         case 37:
-                              keyPresses.push("L")
-                              checkCodeEntered()
-                              break
-                         case 38:
-                              keyPresses.push("U")
-                              checkCodeEntered()
-                              break
-                         case 39:
-                              keyPresses.push("R")
-                              checkCodeEntered()
-                              break
-                         case 40:
-                              keyPresses.push("D")
-                              checkCodeEntered()
-                              break
-                    }
-               }
+               function checkCodeEntered(){if(keyPresses[0]=="U"){if(keyPresses[1]=="U"){if(keyPresses[2]=="D"){if(keyPresses[3]=="D"){if(keyPresses[4]=="L"){if(keyPresses[5]=="R"){if(keyPresses[6]=="L"){if(keyPresses[7]=="R"){window.location.href="./ohno"}}}}}}}}if(keyPresses.length==8){keyPresses.shift()}}
+               document.onkeydown=function(event){switch(event.keyCode){case 37:keyPresses.push("L");checkCodeEntered();break;case 38:keyPresses.push("U");checkCodeEntered();break;case 39:keyPresses.push("R");checkCodeEntered();break;case 40:keyPresses.push("D");checkCodeEntered();break;}}
           </script>
           <div id="titleA">
                <h1>kgsensei's works:</h1>
@@ -128,7 +88,30 @@
                </div>
           </div>
           <div id="copyright">
-               <h5>Copyright © 2021 kgsensei.    <a href="./support/">kgsensei Support</a>.    <a href="./hacks/">Hacks Archive</a>.    <a href="./donate">Support kgsensei [Donate]</a>.</h5>
+               <span id="copyrightBase">Copyright © 2021 kgsensei.</span>     <a href="./support/" id="firstLink">kgsensei Support</a>     <a href="./hacks/" id="secondLink">Hacks Archive</a>     <a href="./donate" id="thirdLink">Donate</a>
           </div>
+          <script>
+               jQuery.fx.off=false
+               /*$("#titleA").fadeIn(500)
+               $("#card1pc").fadeIn(700)
+               $("#card2pc").fadeIn(900)
+               $("#card3pc").fadeIn(1100)
+               $("#iconMainTo").fadeIn(900)
+               $("#iconDiscord").fadeIn(1100)
+               $("#iconTwitter").fadeIn(1300)
+               $("#iconGitHub").fadeIn(1500)*/
+               $("#titleA").fadeIn(500)
+               $("#card1pc").fadeIn(500)
+               $("#card2pc").fadeIn(500)
+               $("#card3pc").fadeIn(500)
+               $("#iconMainTo").fadeIn(500)
+               $("#iconDiscord").fadeIn(500)
+               $("#iconTwitter").fadeIn(500)
+               $("#iconGitHub").fadeIn(500)
+               $("#copyrightBase").fadeIn(1500)
+               $("#firstLink").fadeIn(1700)
+               $("#secondLink").fadeIn(1900)
+               $("#thirdLink").fadeIn(2100)
+          </script>
      </body>
 </html>

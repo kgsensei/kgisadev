@@ -1,53 +1,80 @@
 :root {
-     --contact_icon_height: 55%;
-     --contact_icon_size: 12%;
-}
-
-body{
-     background-image: url("./backdrop.jpg");
-     background-color: rgb(10,10,10);
-     width: 100%;
-     height: 100%;
+     --contact_icon_height: 68%;
+     --contact_icon_size: 10.5%;
+     --card_height_pc: 18%;
+     --animation_display: none;
+}body{
+     background: linear-gradient(196deg,#111111,#858585);
+     background-size: 600% 600%;
+     -webkit-animation: greyBackground 30s ease infinite;
+     -moz-animation: greyBackground 30s ease infinite;
+     -o-animation: greyBackground 30s ease infinite;
+     animation: greyBackground 30s ease infinite;
+}@-webkit-keyframes greyBackground {
+     0%{background-position:65% 0%}
+     50%{background-position:36% 100%}
+     100%{background-position:65% 0%}
+}@-moz-keyframes greyBackground {
+     0%{background-position:65% 0%}
+     50%{background-position:36% 100%}
+     100%{background-position:65% 0%}
+}@-o-keyframes greyBackground {
+     0%{background-position:65% 0%}
+     50%{background-position:36% 100%}
+     100%{background-position:65% 0%}
+}@keyframes greyBackground {
+     0%{background-position:65% 0%}
+     50%{background-position:36% 100%}
+     100%{background-position:65% 0%}
 }#titleA{
+     display: var(--animation_display);
      position: absolute;
      left: 14px;
      color: white;
-     padding: 7.5px;
-     margin: 7.5px;
+     padding-top: 5px;
+     margin-top: 5px;
+     padding-left: 10px;
+     margin-left: 10px;
 }#copyright{
      position: absolute;
      left: 1%;
-     top: 96%;
+     top: 95.8%;
      color: white;
+     font-size: 20px;
+}#copyrightBase,#firstLink,#secondLink,#thirdLink{
+     display: var(--animation_display);
 }#lineOne{
      position: absolute;
      width: 100%;
-     top: 15%;
+     top: var(--card_height_pc);
      left: 0%;
 }.card{
      background-color: rgb(30,30,30);
-     border-radius: 10px;
+     border-radius: 8px;
      border-color: rgb(20,20,20);
      border-style: solid;
      border-width: 1px;
      color: white;
-     width: 500px;
-     height: 200px;
-     padding-top: 2px;
-     margin-top: 2px;
+     width: 450px;
+     height: 190px;
+     padding-top: 0px;
+     margin-top: 0px;
      padding-left: 12px;
      margin-left: 12px;
 }#card1pc{
+     display: var(--animation_display);
      position: absolute;
-     top: 15%;
+     top: var(--card_height_pc);
      left: 4.5%;
 }#card2pc{
+     display: var(--animation_display);
      position: absolute;
-     top: 15%;
+     top: var(--card_height_pc);
      left: 33%;
 }#card3pc{
+     display: var(--animation_display);
      position: absolute;
-     top: 15%;
+     top: var(--card_height_pc);
      left: 61.5%;
 }.cardLink{
      position: absolute;
@@ -59,24 +86,28 @@ body{
      position: absolute;
      top: 67.5%;
 }#iconGitHub{
+     display: var(--animation_display);
      position: absolute;
      width: var(--contact_icon_size);
      height: var(--contact_icon_size);
      top: var(--contact_icon_height);
      left: 20%;
 }#iconMainTo{
+     display: var(--animation_display);
      position: absolute;
      width: var(--contact_icon_size);
      height: var(--contact_icon_size);
      top: var(--contact_icon_height);
      left: 62.5%;
 }#iconDiscord{
+     display: var(--animation_display);
      position: absolute;
      width: var(--contact_icon_size);
      height: var(--contact_icon_size);
      top: var(--contact_icon_height);
      left: 47.75%;
 }#iconTwitter{
+     display: var(--animation_display);
      position: absolute;
      width: var(--contact_icon_size);
      height: var(--contact_icon_size);
@@ -119,5 +150,17 @@ body{
           left: 1.25%;
      }.mobileCard h1{
           font-size: 30px;
+     }#titleA{
+          position: absolute;
+          left: 14px;
+          color: white;
+          padding: 7.5px;
+          margin: 7.5px;
+     }#copyright{
+          display: block;
+          position: absolute;
+          left: 0.25%;
+          top: 96%;
+          color: white;
      }
 }
