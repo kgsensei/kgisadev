@@ -115,12 +115,16 @@
                          $('body').css('background-image','url(./images/'+images[randIndex]+')')
                     }else{
                          if(currentBackground=="feld.png"){
+                              currentBackground="city.jpg"
                               $('body').css('background-image','url(./images/city.jpg)')
                          }else if(currentBackground=="city.jpg"){
+                              currentBackground="bars.jpg"
                               $('body').css('background-image','url(./images/bars.jpg)')
                          }else if(currentBackground=="bars.jpg"){
+                              currentBackground="cars.png"
                               $('body').css('background-image','url(./images/cars.png)')
                          }else{
+                              currentBackground="feld.png"
                               $('body').css('background-image','url(./images/feld.png)')
                          }
                     }
