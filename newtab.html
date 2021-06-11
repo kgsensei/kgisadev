@@ -1,0 +1,80 @@
+<html lang="en">
+     <head>
+          <meta charset="utf-8">
+          <title>kgsensei's newtab</title>
+          <meta name="description" content="kgsensei's personal new tab">
+          <meta name="author" content="kgsensei">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="icon" href="./images/favicon.ico"/>
+          <link rel="stylesheet" href="https://kgsensei.dev/css/site.css">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://kgsensei.dev/js/site.js"></script>
+          <style>
+               body{
+                    background-color: black;
+                    background-size: 100% 100%;
+               }#copyright{
+                    position: fixed;
+                    top: 97%;
+                    left: 0.5%;
+                    color: white;
+               }a{
+                    color: aqua;
+               }a:hover{
+                    color: rgb(0, 214, 214);
+               }#searchHolder{
+                    position: fixed;
+                    top: 35%;
+                    width: 100%;
+                    align-items: center;
+                    align-self: center;
+                    align-content: center;
+                    text-align: center;
+               }#search{
+                    border-radius: 3px;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: rgb(179, 179, 179);
+                    width: 650px;
+                    height: 45px;
+                    font-size: 25px;
+                    font-family: 'Courier New',Courier,monospace;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    color: white;
+               }::-webkit-input-placeholder{
+                    color: rgb(179, 179, 179);
+               }::placeholder{
+                    color: rgb(179, 179, 179);
+               }
+          </style>
+     </head>
+     <body>
+          <script>
+               const images=['feld.png','city.jpg','bars.jpg','cars.png']
+               const randIndex=Math.floor(Math.random()*images.length)
+               $('body').css('background-image','url(./images/'+images[randIndex]+')')
+
+               $(document).ready(function(){
+                    var autoselect=document.getElementById('search')
+                    autoselect.select()
+               })
+
+               function searchFunction(){
+                    searchText=document.getElementById("search").value
+                    console.log("Searching: "+searchText)
+                    window.location.href="https://www.bing.com/search?q="+searchText
+                    return false
+               }
+          </script>
+          <div id="searchHolder">
+               <form id="searchForm" onsubmit="return searchFunction()">
+                    <input type="text" placeholder="[Search Bar]" id="search" spellcheck="true" aria-selected="true">
+               </form>
+          </div>
+          <div id="copyright">
+               <span id="copyrightBase">Copyright © 2021 kgsensei.</span>     <a href="https://github.com/">GitHub</a>     <a href="https://www.reddit.com/">Reddit</a>     <a href="https://console.firebase.google.com/u/0/project/kgsensei-957f7/analytics/app/web:MmZjNWFhOTctNDdlZS00MWFjLTg0NzItMDdlZWM1YTI3NWVm/streamview/~2F%3Ft%3D1623369059751&fpn%3D816657691700&swu%3D1&sgu%3D1&sus%3Dupgraded&params%3D_u..pageSize%253D25&cs%3Dapp.m.streamview.overview&g%3D1">kgsensei Analytics</a>
+          </div>
+     </body>
+</html>
