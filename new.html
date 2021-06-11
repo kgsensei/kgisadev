@@ -47,14 +47,45 @@
                     color: rgb(179, 179, 179);
                }::placeholder{
                     color: rgb(179, 179, 179);
+               }#settingsButton{
+                    position: fixed;
+                    top: 96%;
+                    left: 98%;
+               }#settingsMenu{
+                    display: none;
+                    background-color: black;
+                    opacity: 0.8;
+                    width: 100%;
+                    height: 100%;
+                    position: fixed;
+                    top: 0px;
+                    left: 0px;
+               }#settingsOpti{
+                    color: white;
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                    position: fixed;
+                    top: 0px;
+                    left: 0px;
+                    padding: 15px;
+                    margin: 15px;
                }
           </style>
      </head>
      <body>
           <script>
-               const images=['feld.png','city.jpg','bars.jpg','cars.png']
-               const randIndex=Math.floor(Math.random()*images.length)
-               $('body').css('background-image','url(./images/'+images[randIndex]+')')
+               settingsOpen=false
+               currentBackground=""
+               if(getCookie("backgroundSetting")==null){
+                    const images=['feld.png','city.jpg','bars.jpg','cars.png']
+                    const randIndex=Math.floor(Math.random()*images.length)
+                    currentBackground=images[randIndex]
+                    $('body').css('background-image','url(./images/'+images[randIndex]+')')
+               }else{
+                    currentBackground=getCookie("backgroundSetting")
+                    $('body').css('background-image','url(./images/'+getCookie("backgroundSetting")+')')
+               }
 
                $(document).ready(function(){
                     var autoselect=document.getElementById('search')
@@ -67,6 +98,42 @@
                     window.location.href="https://www.bing.com/search?q="+searchText
                     return false
                }
+
+               function setCookie(cname,cvalue,exdays) {
+                    var d=new Date()
+                    d.setTime(d.getTime()+(exdays*24*60*60*1000))
+                    var expires="expires="+d.toUTCString()
+                    document.cookie=cname+"="+cvalue+";"+expires+";path=/"
+               }
+
+               function getCookie(cname) {
+                    var name=cname+"="
+                    var decodedCookie=decodeURIComponent(document.cookie)
+                    var ca=decodedCookie.split(';')
+                    for(var i=0;i<ca.length;i++){
+                         var c=ca[i]
+                         while (c.charAt(0)==' '){
+                              c=c.substring(1);
+                         }if (c.indexOf(name)==0){
+                              return c.substring(name.length,c.length)
+                         }
+                    }
+                    return null
+               }
+
+               function settingsOption(){
+                    if(settingsOpen==false){
+                         settingsOpen=true
+                         document.getElementById("settingsIcon").style.filter="invert(100%)"
+                         $("#settingsMenu").fadeIn(200)
+                         $("#settingsOpti").fadeIn(900)
+                    }else{
+                         settingsOpen=false
+                         document.getElementById("settingsIcon").style.filter="invert(0)"
+                         $("#settingsMenu").fadeOut(900)
+                         $("#settingsOpti").fadeOut(200)
+                    }
+               }
           </script>
           <div id="searchHolder">
                <form id="searchForm" onsubmit="return searchFunction()">
@@ -74,7 +141,16 @@
                </form>
           </div>
           <div id="copyright">
-               <span id="copyrightBase">Copyright © 2021 kgsensei.</span>     <a href="https://github.com/">GitHub</a>     <a href="https://www.reddit.com/">Reddit</a>     <a href="https://console.firebase.google.com/u/0/project/kgsensei-957f7/analytics/app/web:MmZjNWFhOTctNDdlZS00MWFjLTg0NzItMDdlZWM1YTI3NWVm/streamview/~2F%3Ft%3D1623369059751&fpn%3D816657691700&swu%3D1&sgu%3D1&sus%3Dupgraded&params%3D_u..pageSize%253D25&cs%3Dapp.m.streamview.overview&g%3D1">kgsensei Analytics</a>
+               <span id="copyrightBase">Copyright © 2021 kgsensei.</span>     <a href="https://github.com/">GitHub</a>     <a href="https://www.reddit.com/">Reddit</a>     <a href="https://youtube.com">YouTube</a>     <a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a>     <a href="https://outlook.live.com/mail/0/inbox">Outlook</a>     <a href="https://twitter.com">Twitter</a>     <a href="https://twitch.tv">Twitch</a>
+          </div>
+          <div id="settingsMenu"></div>
+          <div id="settingsOpti">
+               <h1>Settings:</h1>
+               <a onclick="setCookie('backgroundSetting',currentBackground,1000)">Background: Always use Current</a><br>
+               <a onclick="setCookie('backgroundSetting',null,1000)">Background: Random</a><br>
+          </div>
+          <div id="settingsButton" onclick="settingsOption()">
+               <img src="./images/new.ico" width="30" height="30" id="settingsIcon">
           </div>
      </body>
 </html>
