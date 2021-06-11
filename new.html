@@ -77,6 +77,7 @@
           <script>
                settingsOpen=false
                currentBackground=""
+               console.log(getCookie("backgroundSetting"))
                if(getCookie("backgroundSetting")==null){
                     const images=['feld.png','city.jpg','bars.jpg','cars.png']
                     const randIndex=Math.floor(Math.random()*images.length)
