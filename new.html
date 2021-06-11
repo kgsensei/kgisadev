@@ -70,17 +70,19 @@
                     position: fixed;
                     top: 0px;
                     left: 0px;
-                    padding-left: 5px;
-                    margin-left: 5px;
-                    padding-top: 1px;
-                    margin-top: 1px;
+                    padding-left: 6px;
+                    margin-left: 6px;
+                    padding-top: 0px;
+                    margin-top: 0px;
                }.startBlocked{
                     display: none;
                }.settingsPadding{
-                    padding-left: 5px;
-                    margin-left: 5px;
-                    padding-top: 1px;
-                    margin-top: 1px;
+                    padding-left: 6px;
+                    margin-left: 6px;
+                    padding-top: 0px;
+                    margin-top: 0px;
+               }.al{
+                    font-size: 19px;
                }
           </style>
      </head>
@@ -162,12 +164,14 @@
           </div>
           <div id="settingsMenu"></div>
           <div id="settingsOpti">
-               <h2>Settings:</h2>
+               <h1>Settings:</h1>
                <div class="settingsPadding">
-                    <h3>Background:</h3>
+                    <h2>Background:</h2>
                     <div class="settingsPadding">
-                         <a onclick="setCookie('backgroundSetting',currentBackground,1000);showCheck('ok1');">Background: Always use Current</a> <span id="ok1" class="startBlocked">✔</span><br>
-                         <a onclick="setCookie('backgroundSetting',null,1000);showCheck('ok2');">Background: Random</a> <span id="ok2" class="startBlocked">✔</span>
+                         <a onclick="setCookie('backgroundSetting',currentBackground,1000);showCheck('ok1');" class="al">Background: Always use Current</a>  
+                         <span id="ok1" class="startBlocked">✔</span><br>
+                         <a onclick="setCookie('backgroundSetting',null,1000);showCheck('ok2');" class="al">Background: Random</a>  
+                         <span id="ok2" class="startBlocked">✔</span>
                     </div>
                </div>
           </div>
