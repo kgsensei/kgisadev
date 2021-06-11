@@ -21,8 +21,10 @@
                     left: 0.5%;
                     color: white;
                }a{
+                    cursor: pointer;
                     color: aqua;
                }a:hover{
+                    cursor: pointer;
                     color: rgb(0, 214, 214);
                }#searchHolder{
                     position: fixed;
@@ -68,8 +70,17 @@
                     position: fixed;
                     top: 0px;
                     left: 0px;
-                    padding: 15px;
-                    margin: 15px;
+                    padding-left: 5px;
+                    margin-left: 5px;
+                    padding-top: 1px;
+                    margin-top: 1px;
+               }.startBlocked{
+                    display: none;
+               }.settingsPadding{
+                    padding-left: 5px;
+                    margin-left: 5px;
+                    padding-top: 1px;
+                    margin-top: 1px;
                }
           </style>
      </head>
@@ -135,6 +146,11 @@
                          $("#settingsOpti").fadeOut(200)
                     }
                }
+
+               function showCheck(id){
+                    $("#"+id).fadeIn(500)
+                    $("#"+id).fadeOut(500)
+               }
           </script>
           <div id="searchHolder">
                <form id="searchForm" onsubmit="return searchFunction()">
@@ -146,9 +162,14 @@
           </div>
           <div id="settingsMenu"></div>
           <div id="settingsOpti">
-               <h1>Settings:</h1>
-               <a onclick="setCookie('backgroundSetting',currentBackground,1000)">Background: Always use Current</a><br>
-               <a onclick="setCookie('backgroundSetting',null,1000)">Background: Random</a><br>
+               <h2>Settings:</h2>
+               <div class="settingsPadding">
+                    <h3>Background:</h3>
+                    <div class="settingsPadding">
+                         <a onclick="setCookie('backgroundSetting',currentBackground,1000);showCheck('ok1');">Background: Always use Current</a> <span id="ok1" class="startBlocked">✔</span><br>
+                         <a onclick="setCookie('backgroundSetting',null,1000);showCheck('ok2');">Background: Random</a> <span id="ok2" class="startBlocked">✔</span>
+                    </div>
+               </div>
           </div>
           <div id="settingsButton" onclick="settingsOption()">
                <img src="./images/new.ico" width="30" height="30" id="settingsIcon">
