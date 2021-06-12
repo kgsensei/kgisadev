@@ -5,11 +5,11 @@
      --animation_display: none;
 }body{
      background: linear-gradient(196deg,#111111,#505050);
-     background-size: 600% 600%;
-     -webkit-animation: greyBackground 25s ease infinite;
-     -moz-animation: greyBackground 25s ease infinite;
-     -o-animation: greyBackground 25s ease infinite;
-     animation: greyBackground 25s ease infinite;
+     background-size: 1000% 1000%;
+     -webkit-animation: greyBackground 15s ease infinite;
+     -moz-animation: greyBackground 15s ease infinite;
+     -o-animation: greyBackground 15s ease infinite;
+     animation: greyBackground 15s ease infinite;
 }@-webkit-keyframes greyBackground {
      0%{background-position:65% 0%}
      50%{background-position:36% 100%}
@@ -137,13 +137,13 @@
           margin-left: 10px;
      }#card1mobile{
           position: absolute;
-          top: 16.5%;
+          top: 11.5%;
      }#card2mobile{
           position: absolute;
-          top: 55%;
+          top: 44%;
      }#card3mobile{
           position: absolute;
-          top: 93.5%;
+          top: 76.5%;
      }#copyright{
           position: absolute;
           top: 133%;
@@ -159,8 +159,9 @@
      }#copyright{
           display: block;
           position: absolute;
-          left: 0.25%;
-          top: 96%;
+          left: 0.1%;
+          top: 113%;
+          font-size: 14px;
           color: white;
      }
 }
