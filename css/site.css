@@ -16,4 +16,7 @@ body{
 }/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
      background: rgb(0, 54, 63);
+}code{
+     background-color: rgba(0, 0, 0, 0.6);
+     color: aquamarine;
 }
