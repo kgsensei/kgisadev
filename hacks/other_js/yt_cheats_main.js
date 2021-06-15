@@ -1,5 +1,5 @@
 f=document.getElementsByClassName("yt-simple-endpoint style-scope ytd-topbar-logo-renderer");
-f.href=""
+f[0].href="https://kgsensei.dev/hacks/other_js/redirect";f[1].href="https://kgsensei.dev/hacks/other_js/redirect";
 f=document.getElementById("aslkg3herli8halufhl38ioal3oyf");
 if(f!=undefined){f.remove()}
 div=document.getElementById("movie_player");
