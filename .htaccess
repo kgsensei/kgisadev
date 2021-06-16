@@ -1,4 +1,6 @@
+RewriteEngine on
+
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 RewriteRule ^([^\.]+)$ $1.md [NC,L]
-RewriteRule ^([a-zA-Z0-9-/+]+)$ api.php?p=/$1 [L]
+RewriteRule ^path/(.*)/([0-9]+)/ index.php?p=$1 [L]
