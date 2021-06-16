@@ -1,6 +1,6 @@
 RewriteEngine on
 
-RewriteRule ^path/(.*)/([0-9]+)/ api.html?p=$1 [L]
+RewriteRule ^([a-z]+)\/([0-9]+)\/?$ api.html?p=$1 [NC]
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 RewriteRule ^([^\.]+)$ $1.md [NC,L]
