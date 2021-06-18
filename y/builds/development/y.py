@@ -4,6 +4,7 @@ init(autoreset=True)
 
 version="1.0 [DEV]"
 os.system("echo {\"V\":\""+version+"\"} > z.json")
+os.system("title ylang")
 class color:
      PURPLE='\033[95m'
      CYAN='\033[96m'
@@ -138,10 +139,16 @@ def process(c:str):
      except Exception as e:
           print(color.RED+"Error: "+str(e))
 
-if mode=="terminal":
+try:
+     if (sys.argv)[1]!=None:
+          print((sys.argv)[1])
+          input()
+          exit()
+     else:
+          while True:
+               c=input("> ")
+               process(c)
+except Exception:
      while True:
-          c=input("> ")
-          process(c)
-else:
-     print(color.RED+"Unable to calculate mode.")
-     os._exit(1)
+               c=input("> ")
+               process(c)
