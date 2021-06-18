@@ -60,76 +60,76 @@ def process(c:str):
                IFPRAMS=c.split()
                if IFPRAMS[2] == "==":
                     if IFPRAMS[1] == IFPRAMS[3]:
-                         currentline=currentline+1
-                         while "--" in fc[currentline]:
-                              c=fc[currentline]
+                         cl=cl+1
+                         while "--" in fc[cl]:
+                              c=fc[cl]
                               c=c.replace("\n","")
                               c=c.replace("--","")
                               process(c)
-                              currentline=currentline+1
+                              cl=cl+1
                     else:
-                         while "--" in fc[currentline]:
-                              currentline=currentline+1
+                         while "--" in fc[cl]:
+                              cl=cl+1
                elif IFPRAMS[2] == "!=":
                     if IFPRAMS[1] != IFPRAMS[3]:
-                         currentline=currentline+1
-                         while "--" in fc[currentline]:
-                              c=fc[currentline]
+                         cl=cl+1
+                         while "--" in fc[cl]:
+                              c=fc[cl]
                               c=c.replace("\n","")
                               c=c.replace("--","")
                               process(c)
-                              currentline=currentline+1
+                              cl=cl+1
                     else:
-                         while "--" in fc[currentline]:
-                              currentline=currentline+1
+                         while "--" in fc[cl]:
+                              cl=cl+1
                elif IFPRAMS[2] == ">=":
                     if IFPRAMS[1] >= IFPRAMS[3]:
-                         currentline=currentline+1
-                         while "--" in fc[currentline]:
-                              c=fc[currentline]
+                         cl=cl+1
+                         while "--" in fc[cl]:
+                              c=fc[cl]
                               c=c.replace("\n","")
                               c=c.replace("--","")
                               process(c)
-                              currentline=currentline+1
+                              cl=cl+1
                     else:
-                         while "--" in fc[currentline]:
-                              currentline=currentline+1
+                         while "--" in fc[cl]:
+                              cl=cl+1
                elif IFPRAMS[2] == "<=":
                     if IFPRAMS[1] <= IFPRAMS[3]:
-                         currentline=currentline+1
-                         while "--" in fc[currentline]:
-                              c=fc[currentline]
+                         cl=cl+1
+                         while "--" in fc[cl]:
+                              c=fc[cl]
                               c=c.replace("\n","")
                               c=c.replace("--","")
                               process(c)
-                              currentline=currentline+1
+                              cl=cl+1
                     else:
-                         while "--" in fc[currentline]:
-                              currentline=currentline+1
+                         while "--" in fc[cl]:
+                              cl=cl+1
                elif IFPRAMS[2] == "<":
                     if IFPRAMS[1] < IFPRAMS[3]:
-                         currentline=currentline+1
-                         while "--" in fc[currentline]:
-                              c=fc[currentline]
+                         cl=cl+1
+                         while "--" in fc[cl]:
+                              c=fc[cl]
                               c=c.replace("\n","")
                               c=c.replace("--","")
                               process(c)
-                              currentline=currentline+1
+                              cl=cl+1
                     else:
-                         while "--" in fc[currentline]:
-                              currentline=currentline+1
+                         while "--" in fc[cl]:
+                              cl=cl+1
                elif IFPRAMS[2] == ">":
                     if IFPRAMS[1] > IFPRAMS[3]:
-                         currentline=currentline+1
-                         while "--" in fc[currentline]:
-                              c=fc[currentline]
+                         cl=cl+1
+                         while "--" in fc[cl]:
+                              c=fc[cl]
                               c=c.replace("\n","")
                               c=c.replace("--","")
                               process(c)
-                              currentline=currentline+1
+                              cl=cl+1
                     else:
-                         while "--" in fc[currentline]:
-                              currentline=currentline+1
+                         while "--" in fc[cl]:
+                              cl=cl+1
           elif c=="clear()":
                os.system("cls")
           elif c==". <" or c=="_ <":
@@ -140,15 +140,21 @@ def process(c:str):
           print(color.RED+"Error: "+str(e))
 
 try:
-     if (sys.argv)[1]!=None:
-          print((sys.argv)[1])
-          input()
-          exit()
+     if(sys.argv)[1]!=None:
+          with open((sys.argv)[1]) as f:
+               fc=f.readlines()
+               tl=len(fc)
+               cl=0
+               while cl != tl:
+                    c=fc[cl]
+                    c=c.replace("\n","")
+                    process(c)
+                    cl=cl+1
      else:
           while True:
                c=input("> ")
                process(c)
 except Exception:
      while True:
-               c=input("> ")
-               process(c)
+          c=input("> ")
+          process(c)
