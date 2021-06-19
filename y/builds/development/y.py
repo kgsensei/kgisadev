@@ -3,6 +3,7 @@ import os,sys,json,re,time
 init(autoreset=True)
 
 version="1.0 [DEV]"
+VARPRAMS=""
 os.system("echo {\"V\":\""+version+"\"} > z.json")
 os.system("title ylang")
 class color:

@@ -1,4 +1,7 @@
 a = Test
-echo:&a 
+b = Test
+if &a == &b
+--echo:equal
+echo:exit
 sleep:5
 exit()
