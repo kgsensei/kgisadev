@@ -36,26 +36,79 @@
           </div>
           <div id="copyright">Copyright © 2021 kgsensei.</div>
           <script>
+               timesRotate=0
+               texts=["hacks","support","cheats","malware"]
                function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))}
                async function animateItems(){
-                    $("#solutionItems").text("hacks")
+                    $("#solutionItems").text(texts[0])
                     $("#solutionItems").fadeIn(1000)
                     $("#solutionItems").fadeOut(1000)
                     await sleep(2000)
-                    $("#solutionItems").text("support")
+                    $("#solutionItems").text(texts[1])
                     $("#solutionItems").fadeIn(1000)
                     $("#solutionItems").fadeOut(1000)
                     await sleep(2000)
-                    $("#solutionItems").text("cheats")
+                    $("#solutionItems").text(texts[2])
                     $("#solutionItems").fadeIn(1000)
                     $("#solutionItems").fadeOut(1000)
                     await sleep(2000)
-                    $("#solutionItems").text("malware")
+                    $("#solutionItems").text(texts[3])
                     $("#solutionItems").fadeIn(1000)
                     $("#solutionItems").fadeOut(1000)
                     await sleep(2000)
+                    if(texts[3]=="s4wo8uts4oluhg"){
+                         if(timesRotate==1){
+                              texts=["hacks","support","cheats","malware"]
+                         }else{
+                              timesRotate=1
+                         }
+                    }
                     animateItems()
-               }animateItems()
+               }
+               keyPresses=[]
+               function checkCodeEntered(){
+                    if(keyPresses[0]=="U"){
+                         if(keyPresses[1]=="U"){
+                              if(keyPresses[2]=="D"){
+                                   if(keyPresses[3]=="D"){
+                                        if(keyPresses[4]=="L"){
+                                             if(keyPresses[5]=="R"){
+                                                  if(keyPresses[6]=="L"){
+                                                       if(keyPresses[7]=="R"){
+                                                            texts=["b4w78kit6bvk","z39o0876to9y7h","aqp9o387ryfs","s4wo8uts4oluhg"]
+                                                            timesRotate=0
+                                                       }
+                                                  }
+                                             }
+                                        }
+                                   }
+                              }
+                         }
+                    }if(keyPresses.length==8){
+                         keyPresses.shift()
+                    }
+               }
+               document.onkeydown=function(event){
+                    switch(event.keyCode){
+                         case 37:
+                              keyPresses.push("L")
+                              checkCodeEntered()
+                              break
+                         case 38:
+                              keyPresses.push("U")
+                              checkCodeEntered()
+                              break
+                         case 39:
+                              keyPresses.push("R")
+                              checkCodeEntered();
+                              break
+                         case 40:
+                              keyPresses.push("D")
+                              checkCodeEntered()
+                              break
+                    }
+               }
+               animateItems()
           </script>
      </body>
 </html>
