@@ -7,17 +7,55 @@
           <meta name="author" content="kgsensei">
           <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
           <link rel="icon" href="./images/favicon.ico"/>
-          <link rel="stylesheet" href="https://kgsensei.dev/css/site.css">
-          <link rel="stylesheet" href="./css/main.css">
+          <link rel="stylesheet" href="./css/ni.css">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
           <script src="https://kgsensei.dev/js/site.js"></script>
      </head>
      <body>
+          <div id="menubar">
+               <div id="textItemMenubar">kgsensei's works</div>
+               <div id="menubarItemOne" onclick="window.location.href='./support/';">support</div>
+               <div id="menubarItemTwo" onclick="window.location.href='./hacks/';">hacks</div>
+               <div id="menubarItemThr" onclick="window.location.href='./donate';">donate</div>
+          </div>
           <div id="pc">
+               <div id="sectionOne">Your solution for <span id="solutionItems"></span></div>
           </div>
           <div id="mobile">
+               <div id="mobileSectionOne">
+                    Your solution for:
+                    <div id="sectionOneContent">Hacks<br>Support<br>Cheats<br>Malware</div>
+               </div>
+               <div id="mobileLinks">
+                    <div id="linkOne" onclick="window.location.href='./support/';">support</div>
+                    <div id="linkTwo" onclick="window.location.href='./hacks/';">hacks</div>
+                    <div id="linkThr" onclick="window.location.href='./donate';">donate</div>
+               </div>
           </div>
+          <div id="copyright">Copyright © 2021 kgsensei.</div>
+          <script>
+               function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))}
+               async function animateItems(){
+                    $("#solutionItems").text("hacks")
+                    $("#solutionItems").fadeIn(1000)
+                    $("#solutionItems").fadeOut(1000)
+                    await sleep(2000)
+                    $("#solutionItems").text("support")
+                    $("#solutionItems").fadeIn(1000)
+                    $("#solutionItems").fadeOut(1000)
+                    await sleep(2000)
+                    $("#solutionItems").text("cheats")
+                    $("#solutionItems").fadeIn(1000)
+                    $("#solutionItems").fadeOut(1000)
+                    await sleep(2000)
+                    $("#solutionItems").text("malware")
+                    $("#solutionItems").fadeIn(1000)
+                    $("#solutionItems").fadeOut(1000)
+                    await sleep(2000)
+                    animateItems()
+               }animateItems()
+          </script>
      </body>
 </html>
