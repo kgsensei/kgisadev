@@ -1,0 +1,157 @@
+<body style="background-color: black;">
+<script>
+     forks=0
+     open_issues_count=0
+     stargazers_count=0
+     subscribers_count=0
+     watchers_count=0
+     async function load(){
+          await fetch('https://api.github.com/repos/kgsensei/BlooketHack',{
+               owner:'kgsensei',
+               repo:'BlooketHack'
+          })
+          .then(function(response){
+               return(response.json())
+          })
+          .then(function(json){
+               forks=forks+json.forks_count
+               open_issues_count=open_issues_count+json.open_issues_count
+               stargazers_count=stargazers_count+json.stargazers_count
+               subscribers_count=subscribers_count+json.subscribers_count
+               watchers_count=watchers_count+json.watchers_count
+          });
+          await fetch('https://api.github.com/repos/kgsensei/kgisadev',{
+               owner:'kgsensei',
+               repo:'kgisadev'
+          })
+          .then(function(response){
+               return(response.json())
+          })
+          .then(function(json){
+               forks=forks+json.forks_count
+               open_issues_count=open_issues_count+json.open_issues_count
+               stargazers_count=stargazers_count+json.stargazers_count
+               subscribers_count=subscribers_count+json.subscribers_count
+               watchers_count=watchers_count+json.watchers_count
+          });
+          await fetch('https://api.github.com/repos/kgsensei/DangerousFiles',{
+               owner:'kgsensei',
+               repo:'DangerousFiles'
+          })
+          .then(function(response){
+               return(response.json())
+          })
+          .then(function(json){
+               forks=forks+json.forks_count
+               open_issues_count=open_issues_count+json.open_issues_count
+               stargazers_count=stargazers_count+json.stargazers_count
+               subscribers_count=subscribers_count+json.subscribers_count
+               watchers_count=watchers_count+json.watchers_count
+          });
+          await fetch('https://api.github.com/repos/kgsensei/kgsensei',{
+               owner:'kgsensei',
+               repo:'kgsensei'
+          })
+          .then(function(response){
+               return(response.json())
+          })
+          .then(function(json){
+               forks=forks+json.forks_count
+               open_issues_count=open_issues_count+json.open_issues_count
+               stargazers_count=stargazers_count+json.stargazers_count
+               subscribers_count=subscribers_count+json.subscribers_count
+               watchers_count=watchers_count+json.watchers_count
+          });
+          await fetch('https://api.github.com/repos/kgsensei/ConsolePlayer',{
+               owner:'kgsensei',
+               repo:'ConsolePlayer'
+          })
+          .then(function(response){
+               return(response.json())
+          })
+          .then(function(json){
+               forks=forks+json.forks_count
+               open_issues_count=open_issues_count+json.open_issues_count
+               stargazers_count=stargazers_count+json.stargazers_count
+               subscribers_count=subscribers_count+json.subscribers_count
+               watchers_count=watchers_count+json.watchers_count
+          });
+          await fetch('https://api.github.com/repos/kgsensei/Quizizz-Bot-Flood',{
+               owner:'kgsensei',
+               repo:'Quizizz-Bot-Flood'
+          })
+          .then(function(response){
+               return(response.json())
+          })
+          .then(function(json){
+               forks=forks+json.forks_count
+               open_issues_count=open_issues_count+json.open_issues_count
+               stargazers_count=stargazers_count+json.stargazers_count
+               subscribers_count=subscribers_count+json.subscribers_count
+               watchers_count=watchers_count+json.watchers_count
+          });
+          await fetch('https://api.github.com/repos/kgsensei/Keylogger',{
+               owner:'kgsensei',
+               repo:'Keylogger'
+          })
+          .then(function(response){
+               return(response.json())
+          })
+          .then(function(json){
+               forks=forks+json.forks_count
+               open_issues_count=open_issues_count+json.open_issues_count
+               stargazers_count=stargazers_count+json.stargazers_count
+               subscribers_count=subscribers_count+json.subscribers_count
+               watchers_count=watchers_count+json.watchers_count
+          });
+          await fetch('https://api.github.com/repos/kgsensei/NitroType-AutoTyper',{
+               owner:'kgsensei',
+               repo:'NitroType-AutoTyper'
+          })
+          .then(function(response){
+               return(response.json())
+          })
+          .then(function(json){
+               forks=forks+json.forks_count
+               open_issues_count=open_issues_count+json.open_issues_count
+               stargazers_count=stargazers_count+json.stargazers_count
+               subscribers_count=subscribers_count+json.subscribers_count
+               watchers_count=watchers_count+json.watchers_count
+          });
+          await fetch('https://api.github.com/repos/kgsensei/typing.comHack',{
+               owner:'kgsensei',
+               repo:'typing.comHack'
+          })
+          .then(function(response){
+               return(response.json())
+          })
+          .then(function(json){
+               forks=forks+json.forks_count
+               open_issues_count=open_issues_count+json.open_issues_count
+               stargazers_count=stargazers_count+json.stargazers_count
+               subscribers_count=subscribers_count+json.subscribers_count
+               watchers_count=watchers_count+json.watchers_count
+          });
+          await fetch('https://api.github.com/repos/kgsensei/MarioHTML5Hacked',{
+               owner:'kgsensei',
+               repo:'MarioHTML5Hacked'
+          })
+          .then(function(response){
+               return(response.json())
+          })
+          .then(function(json){
+               forks=forks+json.forks_count
+               open_issues_count=open_issues_count+json.open_issues_count
+               stargazers_count=stargazers_count+json.stargazers_count
+               subscribers_count=subscribers_count+json.subscribers_count
+               watchers_count=watchers_count+json.watchers_count
+               console.log(("%cForks:            %c"+forks+"\n%cOpen Issues:      %c"+open_issues_count+"\
+\n%cStargazers:       %c"+stargazers_count+"\n%cSubscribers:      %c"+subscribers_count+"\n%cWatchers:         %c"+watchers_count),
+"color:aqua","color:white","color:aqua","color:white","color:aqua","color:white","color:aqua","color:white","color:aqua","color:white")
+          });
+     }
+
+     load()
+
+</script>
+</body>
