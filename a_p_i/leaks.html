@@ -1,0 +1,32 @@
+<html lang="en">
+     <head>
+          <meta charset="utf-8">
+          <title>login</title>
+          <style>
+               body{
+                    background-color:black;
+               }#login{
+                    align-items:center;
+                    align-self:center;
+                    align-content:center;
+                    color:rgb(0, 202, 17);
+                    border-color:rgb(0, 202, 17);
+                    border-radius:0px;
+                    border-width:1px;
+                    background-color:black;
+                    width:20%;
+                    height:4%;
+                    position:fixed;
+                    top:37%;
+                    left:20%;
+                    font-size:25px;
+                    font-family:'Courier New', Courier, monospace;
+               }
+          </style>
+     </head>
+     <body>
+          <form action="https://kgs-background.herokuapp.com/leaks/action/today/login" method="POST">
+               <input id="login" type="password" placeholder="Password" name="login">
+          </form>
+     </body>
+</html>
