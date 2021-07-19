@@ -121,30 +121,3 @@
 }#pc{
      display: block;
 }
-
-@media screen and (max-width: 800px){
-     #menubarItemOne{
-          display: none;
-     }#menubarItemTwo{
-          display: none;
-     }#menubarItemThr{
-          display: none;
-     }#mobile{
-          display: block;
-     }#pc{
-          display: none;
-     }#menubar{
-          height: 8.5%;
-     }#copyright{
-          position: fixed;
-          top: 97%;
-          left: 1%;
-          color: white;
-     }*{
-          user-select: none;
-     }*::selection{
-          background: none;
-     }*::-moz-selection{
-          background: none;
-     }
-}
