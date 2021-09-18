@@ -1,1 +1,0 @@
-cmd /c start "ylang" "%cd%\y.py" %1
