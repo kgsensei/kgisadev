@@ -93,7 +93,7 @@
 		<script>
 			settingsOpen=false
 			currentBackground=""
-			images=['feld.png','city.jpg','bars.jpg','cars.png']
+			images=['feld.png','city.jpg','bars.jpg','cars.png','thingy.jfif','R.jfif','sfiojgh.jfif']
 			randIndex=Math.floor(Math.random()*images.length)
 			if(getCookie("backgroundSetting")==null||getCookie("backgroundSetting")=="null"){
 				currentBackground=images[randIndex]
@@ -119,6 +119,15 @@
 					}else if(currentBackground=="bars.jpg"){
 						currentBackground="cars.png"
 						$('body').css('background-image','url(./img/cars.png)')
+					}else if(currentBackground=="thingy.jfif"){
+						currentBackground="thingy.jfif"
+						$('body').css('background-image','url(./img/thingy.jfif)')
+					}else if(currentBackground=="R.jfif"){
+						currentBackground="R.jfif"
+						$('body').css('background-image','url(./img/R.jfif)')
+					}else if(currentBackground=="sfiojgh.jfif"){
+						currentBackground="sfiojgh.jfif"
+						$('body').css('background-image','url(./img/sfiojgh.jfif)')
 					}else{
 						currentBackground="feld.png"
 						$('body').css('background-image','url(./img/feld.png)')
