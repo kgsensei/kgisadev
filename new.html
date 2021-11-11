@@ -106,7 +106,30 @@
 				var autoselect=document.getElementById('search')
 				autoselect.select()
 			})
-			function searchFunction(){
+			function nextbackground(){
+				if(getCookie("backgroundSetting")==null||getCookie("backgroundSetting")=="null"){
+					randIndex=randIndex+1
+					if(randIndex>images.length-1){
+						randIndex=0
+					}
+					currentBackground=images[randIndex]
+					$('body').css('background-image','url(./images/'+images[randIndex]+')')
+				}else{
+					if(currentBackground=="feld.png"){
+						currentBackground="city.jpg"
+						$('body').css('background-image','url(./images/city.jpg)')
+					}else if(currentBackground=="city.jpg"){
+						currentBackground="bars.jpg"
+						$('body').css('background-image','url(./images/bars.jpg)')
+					}else if(currentBackground=="bars.jpg"){
+						currentBackground="cars.png"
+						$('body').css('background-image','url(./images/cars.png)')
+					}else{
+						currentBackground="feld.png"
+						$('body').css('background-image','url(./images/feld.png)')
+					}
+				}
+			}function searchFunction(){
 				searchText=document.getElementById("search").value
 				console.log("Searching: "+searchText)
 				window.location.href="https://www.bing.com/search?q="+searchText
@@ -164,6 +187,8 @@
 					<span id="ok1" class="startBlocked">✔</span><br>
 					<a onclick="setCookie('backgroundSetting',null,1000);showCheck('ok2');" class="al">Background: Random</a>  
 					<span id="ok2" class="startBlocked">✔</span>
+					<a onclick="nextbackground();showCheck('ok7');" class="al">Background: Show Next</a>  
+					<span id="ok7" class="startBlocked">✔</span>
 				</div>
 				<h2>Wierd Effects:</h2>
 				<div class="settingsPadding">
