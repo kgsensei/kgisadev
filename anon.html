@@ -1,97 +1,83 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>kgsensei.dev</title>
-		<meta name="description" content="kgsensei.dev is basically the developer profile for kgsensei.">
-        <meta name="keywords" content="kgsensei,js,python,css,html,html5,php,vbscript,twig,developer,profile">
-        <meta name="author" content="kgsensei">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-		<script type="text/javascript" src="./js/jquery321.js"></script>
-		<script type="text/javascript" src="./js/bootstrap.js"></script>
-		<script type="text/javascript" src="./aos/aos.js"></script>
-		<link rel="icon" type="image/png" href="./img/kg.png">
-		<link rel="stylesheet" href="./css/bootstrap.css">
-		<link rel="stylesheet" href="./css/home.css">
-        <link rel="stylesheet" href="./aos/aos.css">
-	</head>
-	<body>
-		<div id="siteTitleTag">Anonymous Extension</div>
-		<div id="siteTiDesTag">Block Harmful Stuff Online</div>
-		<!-- Content section pertaining to trackers -->
-		<div id="content-rainydais">
-			<div class="content-item-title">Trackers</div>
-			<div class="content-item-paragraph">
-				Trackers online can collect a crazy amount of data on users, it's kinda messed up honestly. I was
-				recently browsing the internet and wanted to see how many trackers there really where in a website.
-				I visited a bunch of websites seaking information, a good majority of the websites I looked at had
-				at least two or three trackers, some had as many as twenty.
-			</div>
-			<div class="content-item-picture" data-aos="zoom-in-right" data-aos-duration="1500"
-			data-aos-offset="500">
-				<img src="./img/clipboard-data.svg" width="90%" height="auto" draggable="false">
-			</div>
-		</div>
-		<!-- Content section pertaining to IP grabbers -->
-		<div id="content-blookethack">
-			<div class="content-item-title">IP Grabbers</div>
-			<div class="content-item-paragraph">
-				IP Grabbers are annoying, there is no escaping them, they are in almost every single website you can
-				visit. You can't fix the IP collection issue that easily but you can prevent yourself from clicking
-				on links that let other users get your IP. That information can be trusted a little more within
-				companies; you don't want that little annoying kid getting your IP address though.
-			</div>
-			<div class="content-item-picture" data-aos="fade-up-left" data-aos-duration="1500"
-			data-aos-offset="500">
-				<img src="./img/shield-exclamation.svg" width="90%" height="auto" draggable="false">
-			</div>
-		</div>
-		<!-- Content section pertaining to sketchy websites -->
-		<div id="content-neophoto">
-			<div class="content-item-title">Sketchy Websites</div>
-			<div class="content-item-paragraph">
-				There are a ton of websites that have dangerous code on them, track you or steal your information.
-				The internet truly has become a battleground of information and viruses, malware, etc. You need to
-				protect yourself from these websites before something bad happens. The internet is always getting
-				more and more powerful, but with that, the danger becomes greater and greater.
-			</div>
-			<div class="content-item-picture" data-aos="fade-down" data-aos-duration="1500"
-			data-aos-offset="500">
-				<img src="./img/file-earmark-x.svg" width="90%" height="auto" draggable="false">
-			</div>
-		</div>
-		<!-- Content section pertaining to anon ext -->
-		<div id="content-jdigitalserver">
-			<div class="content-item-title">Anonymous Extension</div>
-			<div class="content-item-paragraph">
-				The browser extension designed to help you stay safe with nothing in return. It sounds almost too
-				good to be true. Anonymous Extension is completely open source on GitHub! Anonymous Extension blocks
-				suspicious trackers and websites but never tracks you. This is because we believe in the internet
-				but we also believe in security and privacy. We hate having people track us so we developed
-				Anonymous Extension. We want to share this with you!<br>
-				You can get it today <a href="https://microsoftedge.microsoft.com/addons/detail/anonymous-extension/cdiiogmchafjebbdjgbchpdeoghfbocp">HERE</a>!
-			</div>
-			<div class="content-item-picture" data-aos="flip-down" data-aos-duration="1500"
-			data-aos-offset="500">
-				<img src="./img/shield-lock.svg" width="90%" height="auto" draggable="false">
-			</div>
-		</div>
-		<!-- Content section pertaining to my skillset -->
-		<div id="content-skills">
-			<div class="content-item-title">More Stuff</div>
-			<div class="content-item-paragraph">
-				The Anonymous Extension is open source on GitHub <a href="https://github.com/kgsensei/AnonymousExtension">here</a>.<br>
-				Any copy must give credit to the inital creator (kgsensei).
-				This project is copyrighted.
-			</div>
-		</div>
-		<!-- Copyright notice, as always... -->
-		<div id="content-copyright">Copyright © 2021 kgsensei.</div>
-		<script>
-			$(document).ready(function(){
-				AOS.init()
-				$('[data-toggle="tooltip"]').tooltip()
-			})
-		</script>
-	</body>
+    <head>
+        <meta charset="utf8">
+        <title>Anon Ext. | kgsensei.dev</title>
+        <style>
+            body{
+                background-color:rgb(32,32,32);
+                padding:0%;
+                margin:0%;
+            }
+            #title{
+                position:absolute;
+                color:white;
+                font-family:sans-serif;
+                font-size:37.5px;
+                left:5%;
+                top:22.5%;
+                font-weight:700;
+            }
+            #container{
+                position:absolute;
+                left:15%;
+                top:35%;
+                width:80%;
+                height:30%;
+            }
+            #leftGr{
+                position:absolute;
+                left:0%;
+                top:0%;
+                width:30%;
+                height:100%;
+                background:rgb(32,32,32);
+                background:linear-gradient(90deg,rgba(32,32,32,1)0%,rgba(255,255,255,0)100%);
+                z-index:99;
+            }
+            #rghtGr{
+                position:absolute;
+                left:70%;
+                top:0%;
+                width:30%;
+                height:100%;
+                background:rgb(32,32,32);
+                background:linear-gradient(270deg,rgba(32,32,32,1)0%,rgba(255,255,255,0)100%);
+                z-index:99;
+            }
+            #scrollTxt{
+                color:white;
+                font-size:30px;
+                font-family:sans-serif;
+                width:100%;
+                height:100%;
+                white-space:pre;
+            }
+            #link{
+                position:absolute;
+                left:0%;
+                top:57.5%;
+                width:100%;
+                font-family:sans-serif;
+                font-size:20px;
+                text-align:center;
+            }
+            a{
+                color:rgb(0,255,234);
+                cursor:pointer;
+                text-decoration:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="title">Anonymous Extension</div>
+        <div id="container">
+            <div id="leftGr"></div>
+            <div id="rghtGr"></div>
+            <marquee direction="left" id="scrollTxt" scrolldelay="60">Block Trackers     |     Stop IP Grabbers     |      Avoid Dangerous Websites     |     Destroy Risky Ads     |     Stay Anonymous, Stay Safe</marquee>
+        </div>
+        <div id="link">
+            <a href="https://microsoftedge.microsoft.com/addons/detail/anonymous-extension/cdiiogmchafjebbdjgbchpdeoghfbocp" target="_blank">Get It Now</a>
+        </div>
+    </body>
 </html>
