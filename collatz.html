@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Collatz Conjecture Visualization</title>
+		<style>
+			body{
+				background-color:rgb(35,35,70);
+				padding:0px;
+				margin:0px;
+				color:white;
+			}#mathGraphContainer{
+				position:absolute;
+				top:0%;
+				left:20%;
+				width:80%;
+				height:100%;
+			}#otherContainer{
+				position:absolute;
+				left:0%;
+				top:0%;
+				width:20%;
+				height:100%;
+			}.oc-btn{
+				position:relative;
+				left:5%;
+				width:90%;
+				height:5%;
+				text-align:center;
+				background-color:rgba(0,0,0,0.5);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="otherContainer">
+			<div class="oc-btn" onclick="newCollatzConjecture(prompt('Number:'))">Add</div>
+		</div>
+		<div id="mathGraphContainer">
+			<canvas id="mathGraph"></canvas>
+		</div>
+		<script src="./js/chart.js"></script>
+		<script>
+			function getNumbersUntil(max){
+				var start=[]
+				for(let i=0;i<max;i++){
+					start.push(i+1)
+				}
+				return start
+			}
+			function isEven(number){
+				if((number%2)==0){return true}
+				else{return false}
+			}
+			chartData=[1,2,3]
+			const ctx=document.getElementById('mathGraph').getContext('2d')
+			const myChart=new Chart(ctx,{
+				type:'line',
+				data:{
+					labels:getNumbersUntil(chartData.length),
+					datasets:[{
+						label:'Collatz Responses',
+						data:chartData,
+						borderWidth:4,
+						borderColor:'rgb(255,255,255)'
+					}]
+				},
+				options:{
+					scales:{
+						y:{
+							beginAtZero:true
+						}
+					},
+					title:{
+						display:false
+					}
+				}
+			})
+			function newCollatzConjecture(targetNumber){
+				chartData=[]
+				targetNumber=targetNumber*1
+				chartData.push(targetNumber)
+				while(targetNumber!=1){
+					if(isEven(targetNumber)){
+						targetNumber=targetNumber/2
+						chartData.push(targetNumber)
+					}else{
+						targetNumber=targetNumber*3+1
+						chartData.push(targetNumber)
+					}
+				}
+				console.log(chartData)
+				myChart.data.datasets.data=chartData
+				myChart.data.labels=getNumbersUntil(chartData.length)
+				myChart.update()
+			}
+		</script>
+	</body>
+</html>
