@@ -6,6 +6,7 @@
 		<style>
 			body{
 				background-color:rgb(35,35,70);
+				font-family:'Courier New',Courier,monospace;
 				padding:0px;
 				margin:0px;
 				color:white;
@@ -28,12 +29,44 @@
 				height:5%;
 				text-align:center;
 				background-color:rgba(0,0,0,0.5);
+				font-size:3.5vh;
+				cursor:pointer;
+			}.centerText{
+				cursor:inherit;
+				position:absolute;
+				top:50%;
+				left:0%;
+				width:100%;
+				text-align:center;
+				transform:translate(0%,-50%);
+			}#whatIsThis{
+				position:relative;
+				left:4%;
+				width:90%
 			}
 		</style>
 	</head>
 	<body>
 		<div id="otherContainer">
-			<div class="oc-btn" onclick="newCollatzConjecture(prompt('Number:'))">Add</div>
+			<div id="whatIsThis">
+				<h3>What Is This?</h3>
+				<p>
+					The Collatz Conjecture asks whether
+					repeating two simple arithmetic operations will eventually
+					transform every positive integer into one. It concerns
+					sequences of integers where each term is obtained from
+					the previous term as follows: if the previous term is even,
+					the next term is one half of the previous term. If the
+					previous term is odd, the next term is 3 times the previous
+					term plus 1. Basically this is a calculater/visualizer for
+					the Collatz Conjecture.
+				</p>
+			</div>
+			<div class="oc-btn" onclick="newCollatzConjecture(prompt('Number:'))">
+				<div class="centerText">
+					New Number
+				</div>
+			</div>
 		</div>
 		<div id="mathGraphContainer">
 			<canvas id="mathGraph"></canvas>
@@ -51,17 +84,18 @@
 				if((number%2)==0){return true}
 				else{return false}
 			}
-			chartData=[1,2,3]
+			chartData=[1,2,3,4,5,6,7,8,9]
 			const ctx=document.getElementById('mathGraph').getContext('2d')
-			const myChart=new Chart(ctx,{
+			myChart=new Chart(ctx,{
 				type:'line',
 				data:{
 					labels:getNumbersUntil(chartData.length),
 					datasets:[{
 						label:'Collatz Responses',
 						data:chartData,
-						borderWidth:4,
-						borderColor:'rgb(255,255,255)'
+						borderWidth:2,
+						borderColor:'rgb(75,192,192)',
+						tension:0.25
 					}]
 				},
 				options:{
@@ -69,15 +103,13 @@
 						y:{
 							beginAtZero:true
 						}
-					},
-					title:{
-						display:false
 					}
 				}
 			})
 			function newCollatzConjecture(targetNumber){
 				chartData=[]
 				targetNumber=targetNumber*1
+				if(targetNumber<2)return
 				chartData.push(targetNumber)
 				while(targetNumber!=1){
 					if(isEven(targetNumber)){
@@ -89,10 +121,11 @@
 					}
 				}
 				console.log(chartData)
-				myChart.data.datasets.data=chartData
 				myChart.data.labels=getNumbersUntil(chartData.length)
+				myChart.data.datasets[0].data=chartData
 				myChart.update()
 			}
+			newCollatzConjecture(5)
 		</script>
 	</body>
 </html>
