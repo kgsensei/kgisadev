@@ -7,7 +7,8 @@
         <meta name="keywords" content="kgsensei,js,python,css,html,html5,php,vbscript,twig,developer,profile,portfolio,rainydais,blookethack">
         <meta name="author" content="kgsensei">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-		<script type="text/javascript" src="./js/bootstrap.js"></script>
+		<script src="./js/jquery321.js"></script>
+		<script src="./js/bootstrap.js"></script>
 		<link rel="icon" type="image/png" href="./img/kg.png">
 		<link rel="stylesheet" href="./css/bootstrap.css">
 		<style>
@@ -31,9 +32,134 @@
 				font-weight:800;
 				-webkit-font-smoothing:antialiased;
 			}
+			#coolProjects{
+				position:absolute;
+				top:95%;
+				left:2.5%;
+				width:95%;
+				background-color:rgb(230,230,230);
+				border-top-left-radius:30px;
+				border-top-right-radius:30px;
+			}
+			.sitePreviewThingy{
+				position:relative;
+				left:2.5%;
+				width:95%;
+				height:375px;
+				border-radius:15px;
+				background-color:rgb(40,40,40);
+			}
+			.spImage{
+				overflow:hidden;
+				border-radius:10px;
+				border-style:solid;
+				border-width:2px;
+				border-color:rgb(0,0,0);
+				position:absolute;
+				top:5%;
+				left:1%;
+				width:auto;
+				height:90%;
+			}
+			.spContent{
+				position:absolute;
+				left:37.5%;
+				top:7.5%;
+				width:50%;
+				height:85%;
+				color:white;
+			}
+			.openProject{
+				cursor:pointer;
+				position:absolute;
+				top:87%;
+				height:12%;
+				left:0%;
+				width:40%;
+				font-size:1.2vw;
+				border-radius:7.5px;
+				border-style:solid;
+				border-width:1px;
+				border-color:rgb(0,0,0);
+				background-color:rgb(0,120,255);
+			}
+			.centerText{
+				cursor:inherit;
+				position:absolute;
+				top:50%;
+				left:0%;
+				width:100%;
+				text-align:center;
+				transform:translate(0%,-50%);
+			}
 		</style>
 	</head>
 	<body>
 		<div id="kgsensei">KGSENSEI</div>
+		<div id="coolProjects">
+			<br><br>
+			<div class="sitePreviewThingy">
+				<div class="spImage">
+					<img src="./img/projects/collatz.png" style="width:100%;height:100%;" draggable="false">
+				</div>
+				<div class="spContent">
+					<h1>Collatz Visualizer</h1>
+					<p style="font-size:1vw;">
+						This was a project I did in 24 hours to challenge myself.
+						The Collatz Conjecture is a math thingy. I just built a
+						visualizer so you can see exactly what each math opperation
+						does to change what the final output is.
+					</p>
+					<div class="openProject" onclick="window.open('https:\/\/kgsensei.dev/collatz','_blank')">
+						<div class="centerText">
+							Open Project
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="sitePreviewThingy">
+				<div class="spImage">
+					<img src="./img/projects/pieclkr.png" style="width:100%;height:100%;" draggable="false">
+				</div>
+				<div class="spContent">
+					<h1>PieClicker</h1>
+					<p style="font-size:1vw;">
+						Originally this was a computer science project I was doing
+						for school. Plenty of people thought it was fun so I ended
+						up making it into a real game. CopyPaste Games was a biproduct
+						of the making of this game. I actually did all the original
+						game code in a weekend then continued to update it from there.
+					</p>
+					<div class="openProject" onclick="window.open('https:\/\/kgsensei.github.io/PieClicker/','_blank')">
+						<div class="centerText">
+							Open Project
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="sitePreviewThingy">
+				<div class="spImage">
+					<img src="./img/projects/rainydais.png" style="width:100%;height:100%;" draggable="false">
+				</div>
+				<div class="spContent">
+					<h1>RainyDais</h1>
+					<p style="font-size:1vw;">
+						RainyDais has been my hobby project for about two years.
+						Originally it was meant to be a social media for me and my
+						friends to use but it never really got there. It's been an on
+						and off project for me. I'm still very proud of it though
+						and it's been a super fun project to work on.
+					</p>
+					<div class="openProject" onclick="window.open('https:\/\/rainydais.com','_blank')">
+						<div class="centerText">
+							Open Project
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+		</div>
 	</body>
 </html>
