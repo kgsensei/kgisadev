@@ -8,20 +8,15 @@
         <meta name="author" content="kgsensei">
         <meta name="viewport" content="width=device-width,initial-scale=1">
 		<script src="./js/jquery321.js"></script>
-		<script src="./js/bootstrap.js"></script>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
-		<link rel="icon" type="image/png" href="./img/kg.png">
+		<link rel="icon" type="image/png" href="./img/kgsensei.png">
 		<link rel="stylesheet" href="./css/w3.css">
-		<link rel="stylesheet" href="./css/bootstrap.css">
 		<style>
 			body{
+				font-family:Verdana,sans-serif;
 				background-color:rgb(20,20,20);
 				padding:0px;
 				margin:0px;
 				user-select:none;
-			}
-			.w3-allerta{
-				font-family:"Allerta Stencil",Sans-serif;
 			}
 			.matrix{
 				background-image:url('./img/f.gif');
@@ -38,55 +33,20 @@
 				font-weight:bold;
 				text-transform:uppercase;
 				font-family:sans-serif;
-				font-weight:800;
+			}
+			.cooltext{
 				color:#272a2c;
-			}
-			.reveal{
-				transform:translate(0%,0%);
-				transition:1s all ease;
-			}
-			.reveal.active{
-				transform:translate(0%,-20%);
-			}
-			@keyframes helloWorld{
-				0%{
-					top:85%;
-				}
-				100%{
-					top:65%;
-				}
-			}
-			#t{
-				position:fixed;
-				animation:helloWorld 500ms ease-out;
-				width:70%;
-				left:15%;
-				top:65%;
+				font-weight:800;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="w3-center">
+		<div class="w3-center cooltext">
 			<div id="kgsensei">KGSENSEI</div>
-			<div class="w3-xxlarge w3-bold" style="color:#272a2c;font-weight:800;">Programmer & Technology Enthusiast</div>
+			<div class="w3-bold" style="font-size:1.75vw;">Programmer & Technology Enthusiast</div>
 		</div>
-		<img src="./000x000.png" id="t" class="w3-round-xlarge">
-		<script>
-			function reveal() {
-				var reveals=document.querySelectorAll(".reveal")
-				for(var i=0;i<reveals.length;i++){
-					var windowHeight=window.innerHeight
-					var elementTop=reveals[i].getBoundingClientRect().top
-					var elementVisible=50
-					if(elementTop<windowHeight-elementVisible){
-						reveals[i].classList.add("active")
-					}else{
-						reveals[i].classList.remove("active")
-					}
-				}
-			}
-			window.addEventListener("scroll",reveal)
-			reveal()
-		</script>
+		<div class="w3-center cooltext" style="position:absolute;top:92%;width:100%;font-size:2.4vw;">
+			[ Interesting Projects ]
+		</div>
 	</body>
 </html>
