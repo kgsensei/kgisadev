@@ -3,50 +3,95 @@
 	<head>
 		<meta charset="utf-8">
 		<title>kgsensei.dev</title>
-		<meta name="description" content="kgsensei.dev is basically the developer portfolio for kgsensei.">
-        <meta name="keywords" content="kgsensei,js,python,css,html,html5,php,vbscript,twig,developer,profile,portfolio,rainydais,blookethack">
+		<meta name="description" content="kgsensei.dev - developer portfolio for kgsensei.">
+        <meta name="keywords" content="kgsensei,developer,profile,portfolio">
         <meta name="author" content="kgsensei">
         <meta name="viewport" content="width=device-width,initial-scale=1">
 		<script src="./js/jquery321.js"></script>
+		<script src="./js/kgLib.js"></script>
 		<link rel="icon" type="image/png" href="./img/kgsensei.png">
-		<link rel="stylesheet" href="./css/w3.css">
-		<style>
-			body{
-				font-family:Verdana,sans-serif;
-				background-color:rgb(20,20,20);
-				padding:0px;
-				margin:0px;
-				user-select:none;
-			}
-			.matrix{
-				background-image:url('./img/f.gif');
-				background-repeat:repeat;
-				-webkit-background-clip:text;
-				background-clip:text;
-				-webkit-text-fill-color:transparent;
-				-webkit-font-smoothing:antialiased;
-			}
-			#kgsensei{
-				margin-top:150px;
-				font-size:10vw;
-				text-align:center;
-				font-weight:bold;
-				text-transform:uppercase;
-				font-family:sans-serif;
-			}
-			.cooltext{
-				color:#272a2c;
-				font-weight:800;
-			}
-		</style>
+		<link rel="stylesheet" href="./css/home.css">
+		<link href='./css/all.css' rel='stylesheet'>
 	</head>
 	<body>
-		<div class="w3-center cooltext">
-			<div id="kgsensei">KGSENSEI</div>
-			<div class="w3-bold" style="font-size:1.75vw;">Programmer & Technology Enthusiast</div>
+		<div id="centerTextContainer">
+			<div style="animation: slideUpIntro 1000ms ease-out;">Hello I'm</div>
+			<div style="animation: slideUpIntro 750ms ease-out 1000ms 1 forwards; transform: translate(0%,25%);">kgsensei</div>
 		</div>
-		<div class="w3-center cooltext" style="position:absolute;top:92%;width:100%;font-size:2.4vw;">
-			[ To Be Continued... ]
+		<div id="clickDownBtn" onclick="onClickScroll('aboutMe')">
+			<i class="gg-push-chevron-down"></i>
 		</div>
+		<div id="aboutMe">
+			<div id="aboutMe-info1">
+				I'm a young coder publishing under the alias <i>kgsensei</i>.
+			</div>
+			<div id="aboutMe-info2">
+				I'm mostly self taught and have been programming since I was about 9.
+			</div>
+			<div id="iconsContainer">
+				<img class="programmingIcon" draggable="false" src="./img/cs.png">
+				<img class="programmingIcon" draggable="false" src="./img/cpp.png">
+				<img class="programmingIcon" draggable="false" src="./img/html.png">
+				<img class="programmingIcon" draggable="false" src="./img/js.jfif">
+				<img class="programmingIcon" draggable="false" src="./img/illustrator.png">
+				<img class="programmingIcon" draggable="false" src="./img/css.png">
+				<img class="programmingIcon" draggable="false" src="./img/photoshop.png">
+				<img class="programmingIcon" draggable="false" src="./img/python.png">
+				<img class="programmingIcon" draggable="false" src="./img/symfony.png">
+				<img class="programmingIcon" draggable="false" src="./img/php.png">
+				<img class="programmingIcon" draggable="false" src="./img/twig.png">
+				<img class="programmingIcon" draggable="false" src="./img/nodejs.png">
+			</div>
+		</div>
+		<script>
+			window.onbeforeunload = function() {
+				window.scrollTo(0, 0)
+			}
+			hasRun = false
+
+			function randomInt(min,max) {
+				return Math.floor(
+					Math.random() * (max - min + 1)
+				) + min
+			}
+
+			function randomItem(array) {
+				return array[
+					Math.floor(
+						Math.random() * array.length
+					)
+				]
+			}
+
+			function blastOff(classTarget) {
+				var icons = document.getElementsByClassName(classTarget)
+				for(let i = 0; i < icons.length; i++){
+					var cL = $(icons[i]).position()
+					var aA = 300
+					var top = randomInt(cL.top - aA, cL.top + aA)
+					var left = randomInt(cL.left - aA, cL.left + aA)
+					$(icons[i]).animate({"top": top, "left": left}, 1000)
+				}
+			}
+			
+			function onClickScroll(id) {
+				document.getElementById(id).scrollIntoView(
+					{
+						behavior: "smooth",
+						block: "end"
+					}
+				)
+			}
+
+			window.onscroll = async function() {
+                if($("#iconsContainer").isOnScreen()){
+					if(hasRun == false){
+						hasRun = true
+						await kg.sleep(250)
+						blastOff('programmingIcon')
+					}
+				}
+			}
+		</script>
 	</body>
 </html>

@@ -1,201 +1,84 @@
-:root{
-	--tooltipbg:rgb(40,40,40);
+body {
+	padding: 0px;
+	margin: 0px;
+	background-color: rgb(20,20,40);
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
 }
 
-body{
-	padding:0px;
-	margin:0px;
-	color:white;
-	overflow-x:hidden;
-	background-color:rgb(20,20,20);
-	font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;
-}
-
-#siteTitleTag{
-	position:absolute;
-	left:27%;
-	top:35%;
-	transform:translate(-50%,-50%);
-	font-size:48px;
-}
-
-#siteTiDesTag{
-	position:absolute;
-	left:27%;
-	top:40%;
-	transform:translate(-50%,-50%);
-	font-size:33.33px;
-}
-
-#i0{
-	overflow:hidden;
-	width:100%;
-	height:100%;
-	position:absolute;
-	top:0%;
-	left:0%;
-	background:rgb(255,0,0);
-	background:linear-gradient(335deg,rgba(255,0,0,1)0%,rgba(0,236,255,1)110%);
-}
-
-#i1{
-	overflow:hidden;
-	width:100%;
-	height:100%;
-	position:absolute;
-	top:100%;
-	left:0%;
-	background-color:rgb(40,40,40);
-}
-
-#i2{
-	overflow:hidden;
-	width:100%;
-	height:100%;
-	position:absolute;
-	top:200%;
-	left:0%;
-	background-color:rgb(40,40,40);
-}
-
-#i2-bg{
-	position:absolute;
-	width:100%;
-	height:auto;
-	background-repeat:no-repeat;
-	filter:brightness(35%);
-}
-
-#i1-bg{
-	position:absolute;
-	width:100%;
-	height:100%;
-	background-repeat:no-repeat;
-	filter:brightness(45%);
-}
-
-#i1-text{
-	position:absolute;
-	top:20%;
-	left:15%;
-	width:25%;
-	height:60%;
-	word-wrap:break-word;
-	font-size:25px;
-}
-
-#i2-text{
-	position:absolute;
-	top:20%;
-	left:15%;
-	width:60%;
-	height:60%;
-	word-wrap:break-word;
-	font-size:35px;
-	text-align:center;
-}
-
-
-#i1-side-images{
-	position:absolute;
-	top:20%;
-	left:64%;
-	width:30%;
-	height:60%;
-}
-
-.side-image{
-	width:130px;
-	height:auto;
-}
-
-.gradient-up{
-	position:absolute;
-	z-index:9999;
-	top:93%;
-	left:0%;
-	width:100%;
-	height:7%;
-	background:rgb(0,0,0);
-	background:linear-gradient(0deg,rgba(0,0,0,1)15%,rgba(0,236,255,0)100%);
-}
-
-.gradient-up-large{
-	position:absolute;
-	z-index:9999;
-	top:70%;
-	left:0%;
-	width:100%;
-	height:30%;
-	background:rgb(0,0,0);
-	background:linear-gradient(0deg,rgba(0,0,0,1)15%,rgba(0,236,255,0)100%);
-}
-
-.gradient-down{
-	position:absolute;
-	z-index:9999;
-	top:0%;
-	left:0%;
-	width:100%;
-	height:7%;
-	background:rgb(0,0,0);
-	background:linear-gradient(180deg,rgba(0,0,0,1)15%,rgba(0,236,255,0)100%);
-}
-
-@media only screen and (max-width:600px){
-	#siteTitleTag{
-		left:50%;
-		top:32.5%;
-		width:100%;
-		text-align:center;
+@keyframes slideUpIntro {
+	0% {
+		transform: translate(0%,25%);
 	}
-
-	#siteTiDesTag{
-		left:50%;
-		top:40%;
-		width:100%;
-		text-align:center;
+	100% {
+		transform: translate(0%,0%);
 	}
+}
 
-	.side-image, #i1-bg, #i2-bg{
-		display:none;
-	}
+#centerTextContainer {
+	position: absolute;
+	left: 20%;
+	top: 25%;
+	width: 30%;
+	font-size: 3vw;
+}
 
-	#i1-text{
-		top:10%;
-		left:5%;
-		width:90%;
-		height:80%;
-		word-wrap:break-word;
-		font-size:23px;
-	}
+#clickDownBtn:hover {
+	font-weight: 800;
+}
 
-	#i1{
-		overflow:hidden;
-		width:100%;
-		height:100%;
-		position:absolute;
-		top:100%;
-		left:0%;
-		background-color:rgb(40,40,40);
-	}
+#clickDownBtn {
+	animation: slideUpIntro 1s ease-out 1s 1 forwards;
+	transform: translate(0%,25%);
+	position: absolute;
+	left: 48%;
+	width: 4%;
+	top: 95%;
+	cursor: pointer;
+}
 
-	#i2-text{
-		top:10%;
-		left:5%;
-		width:90%;
-		height:80%;
-		word-wrap:break-word;
-		font-size:28px;
-	}
+.gg-push-chevron-down {
+    --ggs: 2.5;
+}
 
-	#i2{
-		overflow:hidden;
-		width:100%;
-		height:80%;
-		position:absolute;
-		top:200%;
-		left:0%;
-		background-color:rgb(67, 118, 131);
-	}
+#aboutMe {
+	position: absolute;
+	top: 100%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+}
+
+#aboutMe-info1 {
+	position: absolute;
+	top: 25%;
+	left: 12.5%;
+	width: 20%;
+	font-size: 1.75vw;
+	text-align: center;
+}
+
+#aboutMe-info2 {
+	position: absolute;
+	top: 55%;
+	left: 12.5%;
+	width: 20%;
+	font-size: 1.75vw;
+	text-align: center;
+}
+
+#iconsContainer {
+	position: absolute;
+	left: 50%;
+	top: 25%;
+	height: 50%;
+	width: 50%;
+}
+
+.programmingIcon {
+	position: absolute;
+	top: 40%;
+	left: 40%;
+	width: 100px;
+	height: 100px;
 }
