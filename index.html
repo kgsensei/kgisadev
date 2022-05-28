@@ -11,15 +11,19 @@
 		<script src="./js/kgLib.js"></script>
 		<link rel="icon" type="image/png" href="./img/kgsensei.png">
 		<link rel="stylesheet" href="./css/home.css">
-		<link href='./css/all.css' rel='stylesheet'>
+		<link rel='stylesheet' href='./css/bootstrapIcons.css'>
 	</head>
 	<body>
 		<div id="centerTextContainer">
-			<div style="animation: slideUpIntro 1000ms ease-out;">Hello I'm</div>
-			<div style="animation: slideUpIntro 750ms ease-out 1000ms 1 forwards; transform: translate(0%,25%);">kgsensei</div>
+			<div style="animation: slideUpIntro 1000ms ease-out;">
+				Hello I'm
+			</div>
+			<div id="kgsenseiText">
+				kgsensei
+			</div>
 		</div>
 		<div id="clickDownBtn" onclick="onClickScroll('aboutMe')">
-			<i class="gg-push-chevron-down"></i>
+			<i class="bi bi-chevron-bar-down"></i>
 		</div>
 		<div id="aboutMe">
 			<div id="aboutMe-info1">
@@ -29,69 +33,49 @@
 				I'm mostly self taught and have been programming since I was about 9.
 			</div>
 			<div id="iconsContainer">
-				<img class="programmingIcon" draggable="false" src="./img/cs.png">
-				<img class="programmingIcon" draggable="false" src="./img/cpp.png">
-				<img class="programmingIcon" draggable="false" src="./img/html.png">
-				<img class="programmingIcon" draggable="false" src="./img/js.jfif">
-				<img class="programmingIcon" draggable="false" src="./img/illustrator.png">
-				<img class="programmingIcon" draggable="false" src="./img/css.png">
-				<img class="programmingIcon" draggable="false" src="./img/photoshop.png">
-				<img class="programmingIcon" draggable="false" src="./img/python.png">
-				<img class="programmingIcon" draggable="false" src="./img/symfony.png">
-				<img class="programmingIcon" draggable="false" src="./img/php.png">
-				<img class="programmingIcon" draggable="false" src="./img/twig.png">
-				<img class="programmingIcon" draggable="false" src="./img/nodejs.png">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/cs.png" id="refObj">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/cpp.png">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/html.png">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/js.jfif">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/illustrator.png">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/css.png">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/photoshop.png">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/python.png">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/symfony.png">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/php.png">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/twig.png">
+				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/nodejs.png">
 			</div>
 		</div>
-		<script>
-			window.onbeforeunload = function() {
-				window.scrollTo(0, 0)
-			}
-			hasRun = false
-
-			function randomInt(min,max) {
-				return Math.floor(
-					Math.random() * (max - min + 1)
-				) + min
-			}
-
-			function randomItem(array) {
-				return array[
-					Math.floor(
-						Math.random() * array.length
-					)
-				]
-			}
-
-			function blastOff(classTarget) {
-				var icons = document.getElementsByClassName(classTarget)
-				for(let i = 0; i < icons.length; i++){
-					var cL = $(icons[i]).position()
-					var aA = 300
-					var top = randomInt(cL.top - aA, cL.top + aA)
-					var left = randomInt(cL.left - aA, cL.left + aA)
-					$(icons[i]).animate({"top": top, "left": left}, 1000)
-				}
-			}
-			
-			function onClickScroll(id) {
-				document.getElementById(id).scrollIntoView(
-					{
-						behavior: "smooth",
-						block: "end"
-					}
-				)
-			}
-
-			window.onscroll = async function() {
-                if($("#iconsContainer").isOnScreen()){
-					if(hasRun == false){
-						hasRun = true
-						await kg.sleep(250)
-						blastOff('programmingIcon')
-					}
-				}
-			}
-		</script>
+		<div id="contactMe">
+			<div id="contactMe-title">
+				Check out my Work
+			</div>
+			<div id="socialLinksContainer">
+				<a href="https://github.com/kgsensei" target="_blank">
+					<i class="bi bi-github socialIcon"></i>
+				</a>
+				<a href="https://discord.gg/U5A3QWXZKZ" target="_blank">
+					<i class="bi bi-discord socialIcon"></i>
+				</a>
+				<a href="https://stackoverflow.com/users/13171372/kgsensei" target="_blank">
+					<i class="bi bi-stack-overflow socialIcon"></i>
+				</a>
+				<a href="https://www.youtube.com/channel/UCmcMi7LwDM4mm5XGlk9HaTA" target="_blank">
+					<i class="bi bi-youtube socialIcon"></i>
+				</a>
+				<a href="mailto:ceojeremy@rainydais.com" target="_blank">
+					<i class="bi bi-envelope socialIcon"></i>
+				</a>
+			</div>
+			<hr id="slightDivider">
+			<div id="review">
+				I'm fluent in C#, Python, Web Development Fundamentals & I have
+				experience in many creative software programs, frameworks and programming languages.
+				I work to make the world a more interesting and entertaining place.
+				Thanks for checking my website out, have a great day.
+			</div>
+		</div>
+		<script src="./js/main.js"></script>
 	</body>
 </html>
