@@ -2,20 +2,22 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>kgsensei.dev</title>
+		<title>kgsensei.dev - home</title>
 		<meta name="description" content="kgsensei.dev - developer portfolio for kgsensei.">
-        <meta name="keywords" content="kgsensei,developer,profile,portfolio">
+        <meta name="keywords" content="kgsensei, developer, profile, portfolio">
         <meta name="author" content="kgsensei">
         <meta name="viewport" content="width=device-width,initial-scale=1">
 		<script src="./js/jquery321.js"></script>
 		<script src="./js/kgLib.js"></script>
+		<script src="./js/waypoints.js"></script>
 		<link rel="icon" type="image/png" href="./img/kgsensei.png">
 		<link rel="stylesheet" href="./css/home.css">
 		<link rel='stylesheet' href='./css/bootstrapIcons.css'>
 	</head>
 	<body>
-		<div id="centerTextContainer">
-			<div style="animation: slideUpIntro 1000ms ease-out;">
+		<!-- Front page anim sequence -->
+		<div id="helloContainer">
+			<div style="animation: slideUpIntro 1000ms ease-out;" id="langHello">
 				Hello I'm
 			</div>
 			<div id="kgsenseiText">
@@ -25,28 +27,95 @@
 		<div id="clickDownBtn" onclick="onClickScroll('aboutMe')">
 			<i class="bi bi-chevron-bar-down"></i>
 		</div>
+		<!-- About me section & associated assets -->
 		<div id="aboutMe">
-			<div id="aboutMe-info1">
-				I'm a young coder publishing under the alias <i>kgsensei</i>.
+			<div id="aboutMe-Title" class="reveal">
+				About Me
 			</div>
-			<div id="aboutMe-info2">
-				I'm mostly self taught and have been programming since I was about 9.
-			</div>
-			<div id="iconsContainer">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/cs.png" id="refObj">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/cpp.png">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/html.png">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/js.jfif">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/illustrator.png">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/css.png">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/photoshop.png">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/python.png">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/symfony.png">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/php.png">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/twig.png">
-				<img class="programmingIcon" draggable="false" onmouseenter="move(this)" src="./img/nodejs.png">
+			<div id="aboutMe-content">
+				<div id="aboutMe-FadeInOne" class="fadeInOnReveal">
+					Hello, I'm kgsensei. I'm a young programmer working to make the world a more fun place to live in!
+				</div>
+				<br>
+				<br>
+				<div id="aboutMe-FadeInTwo" class="fadeInOnReveal">
+					I have worked on a bunch of cool projects and I have experience in Audio Engineering, Information Technology & Programming.
+				</div>
+				<br>
+				<br>
+				<div id="aboutMe-FadeInThree" class="fadeInOnReveal">
+					In my free time you can find me playing games, making games & programming other things. Like my own social media platform
+					or automation programs to <span style="text-decoration: line-through;">cheat</span> excel at school.
+				</div>
+				<br>
+				<br>
+				<div id="aboutMe-FadeInFour" class="fadeInOnReveal">
+					I also really enjoy making websites with clean, modern interfaces and plenty of animations to smooth everything out!
+				</div>
 			</div>
 		</div>
+		<div id="mySkills">
+			<div id="mySkills-Title">
+				My Skills
+			</div>
+			<div id="mySkills-container">
+				<div class="mySkills-item">
+					<img class="mySkills-icon" src="./img/js.png">
+					<div class="mySkills-skillBar">
+						<div class="mySkills-skillLevel" id="jsSkill"></div>
+					</div>
+				</div>
+				<div class="mySkills-item">
+					<img class="mySkills-icon" src="./img/cs.png">
+					<div class="mySkills-skillBar">
+						<div class="mySkills-skillLevel" id="csSkill"></div>
+					</div>
+				</div>
+				<div class="mySkills-item">
+					<img class="mySkills-icon" src="./img/python.png">
+					<div class="mySkills-skillBar">
+						<div class="mySkills-skillLevel" id="pySkill"></div>
+					</div>
+				</div>
+				<div class="mySkills-item">
+					<img class="mySkills-icon" src="./img/html.png">
+					<div class="mySkills-skillBar">
+						<div class="mySkills-skillLevel" id="htSkill"></div>
+					</div>
+				</div>
+				<div class="mySkills-item">
+					<img class="mySkills-icon" src="./img/css.png">
+					<div class="mySkills-skillBar">
+						<div class="mySkills-skillLevel" id="s2Skill"></div>
+					</div>
+				</div>
+				<div class="mySkills-item">
+					<img class="mySkills-icon" src="./img/php.png">
+					<div class="mySkills-skillBar">
+						<div class="mySkills-skillLevel" id="hpSkill"></div>
+					</div>
+				</div>
+				<div class="mySkills-item">
+					<img class="mySkills-icon" src="./img/illustrator.png">
+					<div class="mySkills-skillBar">
+						<div class="mySkills-skillLevel" id="ilSkill"></div>
+					</div>
+				</div>
+				<div class="mySkills-item">
+					<img class="mySkills-icon" src="./img/photoshop.png">
+					<div class="mySkills-skillBar">
+						<div class="mySkills-skillLevel" id="psSkill"></div>
+					</div>
+				</div>
+				<div class="mySkills-item">
+					<img class="mySkills-icon" src="./img/cpp.png">
+					<div class="mySkills-skillBar">
+						<div class="mySkills-skillLevel" id="ppSkill"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Contact me section of the page -->
 		<div id="contactMe">
 			<div id="contactMe-title">
 				Check out my Work
@@ -58,9 +127,6 @@
 				<a href="https://discord.gg/U5A3QWXZKZ" target="_blank">
 					<i class="bi bi-discord socialIcon"></i>
 				</a>
-				<a href="https://stackoverflow.com/users/13171372/kgsensei" target="_blank">
-					<i class="bi bi-stack-overflow socialIcon"></i>
-				</a>
 				<a href="https://www.youtube.com/channel/UCmcMi7LwDM4mm5XGlk9HaTA" target="_blank">
 					<i class="bi bi-youtube socialIcon"></i>
 				</a>
@@ -68,12 +134,34 @@
 					<i class="bi bi-envelope socialIcon"></i>
 				</a>
 			</div>
-			<hr id="slightDivider">
-			<div id="review">
-				I'm fluent in C#, Python, Web Development Fundamentals & I have
-				experience in many creative software programs, frameworks and programming languages.
-				I work to make the world a more interesting and entertaining place.
-				Thanks for checking my website out, have a great day.
+		</div>
+		<div id="otherLinks">
+			<div class="linkContainer">
+				<a href="/">Home</a>
+			</div>
+			<div class="linkContainer">
+				<a href="https://rainydais.com" target="_blank">Rainydais</a>
+			</div>
+			<div class="linkContainer">
+				<a href="https://discord.gg/U5A3QWXZKZ" target="_blank">Discord</a>
+			</div>
+			<div class="linkContainer">
+				<a href="https://www.youtube.com/channel/UCmcMi7LwDM4mm5XGlk9HaTA" target="_blank">YouTube</a>
+			</div>
+			<div class="linkContainer">
+				<a href="https://github.com/kgsensei" target="_blank">GitHub</a>
+			</div>
+			<div class="linkContainer">
+				<a href="https://microsoftedge.microsoft.com/addons/detail/anonymous-extension/cdiiogmchafjebbdjgbchpdeoghfbocp" target="_blank">Anonymous Extension</a>
+			</div>
+			<div class="linkContainer">
+				<a href="/collatz" target="_blank">Collatz Calculator</a>
+			</div>
+			<div class="linkContainer">
+				<a href="https://github.com/kgsensei/NitroTypeHack2" target="_blank">NitroType Cheat</a>
+			</div>
+			<div class="linkContainer">
+				<a href="https://github.com/kgsensei/TypingcomHack2" target="_blank">Typing.com Cheat</a>
 			</div>
 		</div>
 		<script src="./js/main.js"></script>

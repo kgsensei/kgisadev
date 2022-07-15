@@ -1,10 +1,12 @@
 body {
 	padding: 0px;
 	margin: 0px;
-	background-color: rgb(20, 20, 40);
+	background-color: rgb(10, 47, 70);
 	font-family: Arial, Helvetica, sans-serif;
 	color: white;
 }
+
+/* Front page anim sequence & associated assets */
 
 @keyframes slideUpIntro {
 	0% {
@@ -15,7 +17,7 @@ body {
 	}
 }
 
-#centerTextContainer {
+#helloContainer {
 	position: absolute;
 	left: 20%;
 	top: 25%;
@@ -24,7 +26,7 @@ body {
 }
 
 #clickDownBtn {
-	animation: slideUpIntro 1s ease-out 1250ms 1 forwards;
+	animation: slideUpIntro 1s ease-out 1750ms 1 forwards;
 	transform: translate(0%, 25%);
 	position: absolute;
 	left: 48%;
@@ -36,6 +38,8 @@ body {
     font-size: 2.5vw;
 }
 
+/* About me section */
+
 #aboutMe {
 	position: absolute;
 	top: 100%;
@@ -44,43 +48,82 @@ body {
 	height: 100%;
 }
 
-#aboutMe-info1 {
+#aboutMe-Title {
 	position: absolute;
-	top: 25%;
-	left: 12.5%;
-	width: 20%;
-	font-size: 1.75vw;
-	text-align: center;
+	top: 2%;
+	left: 1%;
+	font-size: 3vw;
 }
 
-#aboutMe-info2 {
+#aboutMe-content {
 	position: absolute;
-	top: 55%;
-	left: 12.5%;
-	width: 20%;
-	font-size: 1.75vw;
-	text-align: center;
+	top: 15%;
+	left: 5%;
+	width: 40%;
+	word-wrap: break-word;
+	font-size: 1.5vw;
 }
 
-#iconsContainer {
+#mySkills {
 	position: absolute;
-	left: 50%;
-	top: 25%;
-	height: 50%;
-	width: 50%;
+	top: 200%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
 }
 
-.programmingIcon {
+#mySkills-Title {
 	position: absolute;
-	top: 40%;
-	left: 40%;
-	width: 5%;
-	height: auto;
+	top: 2%;
+	left: 1%;
+	font-size: 3vw;
+}
+
+#mySkills-container {
+	position: absolute;
+	top: 15%;
+	left: 8%;
+	width: 80%;
+	height: 75%;
+	font-size: 1vw;
+}
+
+.mySkills-item {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 10%;
+	padding-bottom: 20px;
+}
+
+.mySkills-icon {
+	position: relative;
+	height: 100%;
+	width: auto;
+}
+
+.mySkills-skillBar {
+	display: inline-block;
+	position: absolute;
+	width: 90%;
+	left: 10%;
+	top: 15%;
+	background-color: rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	height: 60%;
+}
+
+.mySkills-skillLevel {
+	border-radius: 10px;
+	position: relative;
+	width: 0%;
+	background-color: rgba(0, 255, 136, 0.5);
+	height: 100%;
 }
 
 #contactMe {
 	position: absolute;
-	top: 200%;
+	top: 300%;
 	left: 0%;
 	width: 100%;
 	height: 100%;
@@ -110,38 +153,39 @@ body {
 	text-decoration: none;
 }
 
-#slightDivider {
-	position: absolute;
-	top: 42.5%;
-	left: 35%;
-	width: 30%;
-}
-
-#review {
-	position: absolute;
-	top: 55%;
-	left: 25%;
-	width: 50%;
-	text-align: center;
-	font-size: 1.5vw;
-}
-
-.socialIcon:hover {
-	color: rgb(85, 85, 85);
-	transition: all 250ms;
-}
-
-.socialIcon {
-	transition: all 250ms;
-}
-
 #kgsenseiText {
-	transform: translate(0%,25%);
+	transform: translate(0%, 25%);
 	animation: slideUpIntro 750ms ease-out 1000ms 1 forwards;
 }
 
+.fadeInOnReveal {
+	opacity: 0;
+	transform: translate(0%, 25%);
+}
+
+#otherLinks {
+	overflow: hidden;
+	position: absolute;
+	top: 365%;
+	width: 100%;
+	height: 35%;
+	background-color: rgba(0, 0, 0, 0.5);
+	column-count: 3;
+}
+
+#otherLinks a {
+	color: rgba(255, 255, 255, 0.9);
+	text-decoration: none;
+}
+
+.linkContainer {
+	padding-left: 50px;
+	padding-top: 50px;
+	padding-right: 50px;
+}
+
 @media only screen and (max-width:600px){
-	#centerTextContainer {
+	#helloContainer {
 		width: 70%;
 		left: 10%;
 		top: 15%;
@@ -153,39 +197,30 @@ body {
 	}
 
 	#aboutMe {
-		top: 80%;
+		top: 100%;
 	}
 
-	#aboutMe-info1 {
-		width: 90%;
-		left: 5%;
-		font-size: 3vh;
-	}
-
-	#aboutMe-info2 {
-		width: 90%;
-		left: 5%;
-		top: 40%;
-		font-size: 3vh;
-	}
-
-	.programmingIcon {
-		width: 20%;
-		height: auto;
-	}
-
-	#iconsContainer {
+	#aboutMe-Title {
 		position: absolute;
-		overflow: hidden;
-		left: 0%;
-		top: 60%;
-		height: 75%;
-		width: 100%;
+		top: 3%;
+		left: 2.5%;
+		font-size: 5vh;
+	}
+	
+	#aboutMe-content {
+		top: 15%;
+		left: 5%;
+		width: 90%;
+		font-size: 2.6vh;
 	}
 
 	#contactMe {
-		top: 225%;
-		height: 70%;
+		top: 310%;
+		height: 85%;
+	}
+
+	#otherLinks {
+		top: 360%;
 	}
 
 	#contactMe-title {
@@ -196,9 +231,37 @@ body {
 		font-size: 8vw;
 	}
 
-	#review {
-		left: 5%;
-		width: 90%;
-		font-size: 4.5vw;
+	#mySkills {
+		top: 200%;
+	}
+	
+	#mySkills-Title {
+		position: absolute;
+		top: 3%;
+		left: 2.5%;
+		font-size: 5vh;
+	}
+	
+	.mySkills-item {
+		padding-bottom: 15px;
+	}
+	
+	.mySkills-icon {
+		position: relative;
+		height: 100%;
+		width: auto;
+	}
+	
+	.mySkills-skillBar {
+		width: 75%;
+		left: 25%;
+		top: 20%;
+		height: 40%;
+	}
+
+	.linkContainer {
+		padding-left: 10px;
+		padding-top: 20px;
+		padding-right: 10px;
 	}
 }
