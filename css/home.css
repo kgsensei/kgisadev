@@ -186,8 +186,8 @@ body {
 
 @media only screen and (max-width:600px){
 	#helloContainer {
-		width: 70%;
-		left: 10%;
+		width: 90%;
+		left: 5%;
 		top: 15%;
 		font-size: 5.5vh;
 	}
